@@ -1,0 +1,594 @@
+2024-02-19 00:40:48,453{GMT}	INFO	[jepsen test runner] jepsen.core: Test version a6ecf26472b81b804f34a302bd07c0bb804a8801 (plus uncommitted changes)
+2024-02-19 00:40:48,453{GMT}	INFO	[jepsen test runner] jepsen.core: Command line:
+lein run test -w broadcast --bin /Users/danishsharma/go/src/gossip-glamers/single_node_broadcast/bin --node-count 1 --time-limit 20 --rate 10
+2024-02-19 00:40:48,533{GMT}	INFO	[jepsen test runner] jepsen.core: Running test:
+{:args []
+ :remote
+ #jepsen.control.retry.Remote{:remote #jepsen.control.scp.Remote{:cmd-remote #jepsen.control.sshj.SSHJRemote{:concurrency-limit 6,
+                                                                                                             :conn-spec nil,
+                                                                                                             :client nil,
+                                                                                                             :semaphore nil},
+                                                                 :conn-spec nil},
+                              :conn nil}
+ :log-net-send false
+ :node-count 1
+ :availability nil
+ :max-txn-length 4
+ :concurrency 1
+ :db
+ #object[maelstrom.db$db$reify__16142
+         "0x4b48be5c"
+         "maelstrom.db$db$reify__16142@4b48be5c"]
+ :max-writes-per-key 16
+ :leave-db-running? false
+ :name "broadcast"
+ :logging-json? false
+ :start-time
+ #object[org.joda.time.DateTime "0x1ef6977b" "2024-02-19T00:40:48.354+05:30"]
+ :nemesis-interval 10
+ :net
+ #object[maelstrom.net$jepsen_net$reify__15251
+         "0x674cd2da"
+         "maelstrom.net$jepsen_net$reify__15251@674cd2da"]
+ :client
+ #object[maelstrom.workload.broadcast$client$reify__16644
+         "0x686279e0"
+         "maelstrom.workload.broadcast$client$reify__16644@686279e0"]
+ :barrier
+ #object[java.util.concurrent.CyclicBarrier
+         "0x6b28d4e4"
+         "java.util.concurrent.CyclicBarrier@6b28d4e4"]
+ :log-stderr false
+ :pure-generators true
+ :ssh {:dummy? true}
+ :rate 10.0
+ :checker
+ #object[jepsen.checker$compose$reify__11881
+         "0x41cfcbb5"
+         "jepsen.checker$compose$reify__11881@41cfcbb5"]
+ :argv
+ ("test"
+  "-w"
+  "broadcast"
+  "--bin"
+  "/Users/danishsharma/go/src/gossip-glamers/single_node_broadcast/bin"
+  "--node-count"
+  "1"
+  "--time-limit"
+  "20"
+  "--rate"
+  "10")
+ :nemesis
+ (jepsen.nemesis.ReflCompose
+  {:fm {:start-partition 0,
+        :stop-partition 0,
+        :kill 1,
+        :start 1,
+        :pause 1,
+        :resume 1},
+   :nemeses [#unprintable "jepsen.nemesis.combined$partition_nemesis$reify__16416@40941b54"
+             #unprintable "jepsen.nemesis.combined$db_nemesis$reify__16397@3b42d7df"]})
+ :nodes ["n0"]
+ :test-count 1
+ :latency {:mean 0, :dist :constant}
+ :bin "/Users/danishsharma/go/src/gossip-glamers/single_node_broadcast/bin"
+ :generator
+ ((jepsen.generator.Synchronize
+   {:gen (jepsen.generator.TimeLimit
+          {:limit 20000000000,
+           :cutoff nil,
+           :gen (jepsen.generator.Any
+                 {:gens [(jepsen.generator.OnThreads
+                          {:f #{:nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                                   "0x704c3ca2"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__9167@704c3ca2"],
+                           :gen nil})
+                         (jepsen.generator.OnThreads
+                          {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                                   "0x7d3a9061"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__9167@7d3a9061"],
+                           :gen (jepsen.generator.Stagger
+                                 {:dt 200000000,
+                                  :next-time nil,
+                                  :gen (jepsen.generator.Mix
+                                        {:i 0,
+                                         :gens [({:f :broadcast, :value 0}
+                                                 {:f :broadcast, :value 1}
+                                                 {:f :broadcast, :value 2}
+                                                 {:f :broadcast, :value 3}
+                                                 {:f :broadcast, :value 4}
+                                                 {:f :broadcast, :value 5}
+                                                 {:f :broadcast, :value 6}
+                                                 {:f :broadcast, :value 7}
+                                                 ...)
+                                                ({:f :read}
+                                                 {:f :read}
+                                                 {:f :read}
+                                                 {:f :read}
+                                                 {:f :read}
+                                                 {:f :read}
+                                                 {:f :read}
+                                                 {:f :read}
+                                                 ...)]})})})]})})})
+  (jepsen.generator.Synchronize
+   {:gen (jepsen.generator.OnThreads
+          {:f #{:nemesis},
+           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                   "0x8d40f07"
+                                   "jepsen.generator.context$make_thread_filter$lazy_filter__9167@8d40f07"],
+           :gen ()})})
+  (jepsen.generator.Synchronize
+   {:gen {:type :log, :value "Waiting for recovery..."}})
+  (jepsen.generator.Synchronize {:gen {:type :sleep, :value 10}})
+  (jepsen.generator.Synchronize
+   {:gen (jepsen.generator.OnThreads
+          {:f #jepsen.generator.context.AllBut{:element :nemesis},
+           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                   "0x196c8b93"
+                                   "jepsen.generator.context$make_thread_filter$lazy_filter__9167@196c8b93"],
+           :gen (jepsen.generator.EachThread
+                 {:fresh-gen {:f :read, :final? true},
+                  :context-filters #object[clojure.core$promise$reify__8591
+                                           "0x307ca947"
+                                           {:status :pending, :val nil}],
+                  :gens {}})})}))
+ :log-net-recv false
+ :os
+ #object[maelstrom.net$jepsen_os$reify__15254
+         "0x61d1315b"
+         "maelstrom.net$jepsen_os$reify__15254@61d1315b"]
+ :time-limit 20
+ :workload :broadcast
+ :consistency-models [:strict-serializable]
+ :topology :grid}
+
+2024-02-19 00:40:50,410{GMT}	INFO	[jepsen node n0] maelstrom.net: Starting Maelstrom network
+2024-02-19 00:40:50,411{GMT}	INFO	[jepsen test runner] jepsen.db: Tearing down DB
+2024-02-19 00:40:50,413{GMT}	INFO	[jepsen test runner] jepsen.db: Setting up DB
+2024-02-19 00:40:50,415{GMT}	INFO	[jepsen node n0] maelstrom.service: Starting services: (lin-kv lin-tso lww-kv seq-kv)
+2024-02-19 00:40:50,416{GMT}	INFO	[jepsen node n0] maelstrom.db: Setting up n0
+2024-02-19 00:40:50,417{GMT}	INFO	[jepsen node n0] maelstrom.process: launching /Users/danishsharma/go/src/gossip-glamers/single_node_broadcast/bin []
+2024-02-19 00:40:50,856{GMT}	INFO	[jepsen test runner] jepsen.core: Relative time begins now
+2024-02-19 00:40:50,876{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:broadcast	0
+2024-02-19 00:40:50,879{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:broadcast	0
+2024-02-19 00:40:50,975{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	nil
+2024-02-19 00:40:50,990{GMT}	WARN	[jepsen worker 0] jepsen.generator.interpreter: Process 0 crashed
+clojure.lang.ExceptionInfo: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "read", :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "read_ok"),
+ :messages [Any],
+ {:k :msg_id} Int,
+ :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message_ids [0], :type "read_ok"}
+
+This is malformed because:
+
+{:messages missing-required-key, :message_ids disallowed-key}
+
+See doc/protocol.md for more guidance.
+	at slingshot.support$stack_trace.invoke(support.clj:201)
+	at maelstrom.client$check_body.invokeStatic(client.clj:188)
+	at maelstrom.client$check_body.invoke(client.clj:181)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$client$reify__16644.invoke_BANG_(broadcast.clj:207)
+	at jepsen.client.Validate.invoke_BANG_(client.clj:83)
+	at jepsen.generator.interpreter.ClientWorker.invoke_BANG_(interpreter.clj:65)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909.invoke(interpreter.clj:140)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908.invoke(interpreter.clj:123)
+	at clojure.core$binding_conveyor_fn$fn__5823.invoke(core.clj:2047)
+	at clojure.lang.AFn.call(AFn.java:18)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-02-19 00:40:51,162{GMT}	INFO	[jepsen worker 0] jepsen.util: 1	:invoke	:read	nil
+2024-02-19 00:40:51,170{GMT}	WARN	[jepsen worker 0] jepsen.generator.interpreter: Process 1 crashed
+clojure.lang.ExceptionInfo: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "read", :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "read_ok"),
+ :messages [Any],
+ {:k :msg_id} Int,
+ :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message_ids [0], :type "read_ok"}
+
+This is malformed because:
+
+{:messages missing-required-key, :message_ids disallowed-key}
+
+See doc/protocol.md for more guidance.
+	at slingshot.support$stack_trace.invoke(support.clj:201)
+	at maelstrom.client$check_body.invokeStatic(client.clj:188)
+	at maelstrom.client$check_body.invoke(client.clj:181)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$client$reify__16644.invoke_BANG_(broadcast.clj:207)
+	at jepsen.client.Validate.invoke_BANG_(client.clj:83)
+	at jepsen.generator.interpreter.ClientWorker.invoke_BANG_(interpreter.clj:65)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909.invoke(interpreter.clj:140)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908.invoke(interpreter.clj:123)
+	at clojure.core$binding_conveyor_fn$fn__5823.invoke(core.clj:2047)
+	at clojure.lang.AFn.call(AFn.java:18)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-02-19 00:40:51,285{GMT}	INFO	[jepsen worker 0] jepsen.util: 2	:invoke	:read	nil
+2024-02-19 00:40:51,293{GMT}	WARN	[jepsen worker 0] jepsen.generator.interpreter: Process 2 crashed
+clojure.lang.ExceptionInfo: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "read", :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "read_ok"),
+ :messages [Any],
+ {:k :msg_id} Int,
+ :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message_ids [0], :type "read_ok"}
+
+This is malformed because:
+
+{:messages missing-required-key, :message_ids disallowed-key}
+
+See doc/protocol.md for more guidance.
+	at slingshot.support$stack_trace.invoke(support.clj:201)
+	at maelstrom.client$check_body.invokeStatic(client.clj:188)
+	at maelstrom.client$check_body.invoke(client.clj:181)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$client$reify__16644.invoke_BANG_(broadcast.clj:207)
+	at jepsen.client.Validate.invoke_BANG_(client.clj:83)
+	at jepsen.generator.interpreter.ClientWorker.invoke_BANG_(interpreter.clj:65)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909.invoke(interpreter.clj:140)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908.invoke(interpreter.clj:123)
+	at clojure.core$binding_conveyor_fn$fn__5823.invoke(core.clj:2047)
+	at clojure.lang.AFn.call(AFn.java:18)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-02-19 00:40:51,478{GMT}	INFO	[jepsen worker 0] jepsen.util: 3	:invoke	:read	nil
+2024-02-19 00:40:51,485{GMT}	WARN	[jepsen worker 0] jepsen.generator.interpreter: Process 3 crashed
+clojure.lang.ExceptionInfo: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "read", :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "read_ok"),
+ :messages [Any],
+ {:k :msg_id} Int,
+ :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message_ids [0], :type "read_ok"}
+
+This is malformed because:
+
+{:messages missing-required-key, :message_ids disallowed-key}
+
+See doc/protocol.md for more guidance.
+	at slingshot.support$stack_trace.invoke(support.clj:201)
+	at maelstrom.client$check_body.invokeStatic(client.clj:188)
+	at maelstrom.client$check_body.invoke(client.clj:181)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$client$reify__16644.invoke_BANG_(broadcast.clj:207)
+	at jepsen.client.Validate.invoke_BANG_(client.clj:83)
+	at jepsen.generator.interpreter.ClientWorker.invoke_BANG_(interpreter.clj:65)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909.invoke(interpreter.clj:140)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908.invoke(interpreter.clj:123)
+	at clojure.core$binding_conveyor_fn$fn__5823.invoke(core.clj:2047)
+	at clojure.lang.AFn.call(AFn.java:18)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-02-19 00:40:51,530{GMT}	INFO	[jepsen worker 0] jepsen.util: 4	:invoke	:read	nil
+2024-02-19 00:40:51,537{GMT}	WARN	[jepsen worker 0] jepsen.generator.interpreter: Process 4 crashed
+clojure.lang.ExceptionInfo: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "read", :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "read_ok"),
+ :messages [Any],
+ {:k :msg_id} Int,
+ :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message_ids [0], :type "read_ok"}
+
+This is malformed because:
+
+{:messages missing-required-key, :message_ids disallowed-key}
+
+See doc/protocol.md for more guidance.
+	at slingshot.support$stack_trace.invoke(support.clj:201)
+	at maelstrom.client$check_body.invokeStatic(client.clj:188)
+	at maelstrom.client$check_body.invoke(client.clj:181)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$client$reify__16644.invoke_BANG_(broadcast.clj:207)
+	at jepsen.client.Validate.invoke_BANG_(client.clj:83)
+	at jepsen.generator.interpreter.ClientWorker.invoke_BANG_(interpreter.clj:65)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909.invoke(interpreter.clj:140)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908.invoke(interpreter.clj:123)
+	at clojure.core$binding_conveyor_fn$fn__5823.invoke(core.clj:2047)
+	at clojure.lang.AFn.call(AFn.java:18)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-02-19 00:40:51,623{GMT}	INFO	[jepsen worker 0] jepsen.util: 5	:invoke	:read	nil
+2024-02-19 00:40:51,627{GMT}	WARN	[jepsen worker 0] jepsen.generator.interpreter: Process 5 crashed
+clojure.lang.ExceptionInfo: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "read", :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "read_ok"),
+ :messages [Any],
+ {:k :msg_id} Int,
+ :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message_ids [0], :type "read_ok"}
+
+This is malformed because:
+
+{:messages missing-required-key, :message_ids disallowed-key}
+
+See doc/protocol.md for more guidance.
+	at slingshot.support$stack_trace.invoke(support.clj:201)
+	at maelstrom.client$check_body.invokeStatic(client.clj:188)
+	at maelstrom.client$check_body.invoke(client.clj:181)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$client$reify__16644.invoke_BANG_(broadcast.clj:207)
+	at jepsen.client.Validate.invoke_BANG_(client.clj:83)
+	at jepsen.generator.interpreter.ClientWorker.invoke_BANG_(interpreter.clj:65)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909.invoke(interpreter.clj:140)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908.invoke(interpreter.clj:123)
+	at clojure.core$binding_conveyor_fn$fn__5823.invoke(core.clj:2047)
+	at clojure.lang.AFn.call(AFn.java:18)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-02-19 00:40:51,667{GMT}	INFO	[jepsen worker 0] jepsen.util: 6	:invoke	:broadcast	1
+2024-02-19 00:40:51,668{GMT}	INFO	[jepsen worker 0] jepsen.util: 6	:ok	:broadcast	1
+2024-02-19 00:40:51,825{GMT}	INFO	[jepsen worker 0] jepsen.util: 6	:invoke	:broadcast	2
+2024-02-19 00:40:51,826{GMT}	INFO	[jepsen worker 0] jepsen.util: 6	:ok	:broadcast	2
+2024-02-19 00:40:51,838{GMT}	INFO	[jepsen worker 0] jepsen.util: 6	:invoke	:read	nil
+2024-02-19 00:40:51,843{GMT}	WARN	[jepsen worker 0] jepsen.generator.interpreter: Process 6 crashed
+clojure.lang.ExceptionInfo: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "read", :msg_id 3}
+
+And expected a response of the form:
+
+{:type (eq "read_ok"),
+ :messages [Any],
+ {:k :msg_id} Int,
+ :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 3, :message_ids [0 1 2], :type "read_ok"}
+
+This is malformed because:
+
+{:messages missing-required-key, :message_ids disallowed-key}
+
+See doc/protocol.md for more guidance.
+	at slingshot.support$stack_trace.invoke(support.clj:201)
+	at maelstrom.client$check_body.invokeStatic(client.clj:188)
+	at maelstrom.client$check_body.invoke(client.clj:181)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$client$reify__16644.invoke_BANG_(broadcast.clj:207)
+	at jepsen.client.Validate.invoke_BANG_(client.clj:83)
+	at jepsen.generator.interpreter.ClientWorker.invoke_BANG_(interpreter.clj:65)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909.invoke(interpreter.clj:140)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908.invoke(interpreter.clj:123)
+	at clojure.core$binding_conveyor_fn$fn__5823.invoke(core.clj:2047)
+	at clojure.lang.AFn.call(AFn.java:18)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-02-19 00:40:51,875{GMT}	INFO	[jepsen worker 0] jepsen.util: 7	:invoke	:broadcast	3
+2024-02-19 00:40:51,876{GMT}	INFO	[jepsen worker 0] jepsen.util: 7	:ok	:broadcast	3
+2024-02-19 00:40:51,959{GMT}	INFO	[jepsen worker 0] jepsen.util: 7	:invoke	:read	nil
+2024-02-19 00:40:51,964{GMT}	WARN	[jepsen worker 0] jepsen.generator.interpreter: Process 7 crashed
+clojure.lang.ExceptionInfo: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "read", :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "read_ok"),
+ :messages [Any],
+ {:k :msg_id} Int,
+ :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message_ids [0 1 2 3], :type "read_ok"}
+
+This is malformed because:
+
+{:messages missing-required-key, :message_ids disallowed-key}
+
+See doc/protocol.md for more guidance.
+	at slingshot.support$stack_trace.invoke(support.clj:201)
+	at maelstrom.client$check_body.invokeStatic(client.clj:188)
+	at maelstrom.client$check_body.invoke(client.clj:181)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$client$reify__16644.invoke_BANG_(broadcast.clj:207)
+	at jepsen.client.Validate.invoke_BANG_(client.clj:83)
+	at jepsen.generator.interpreter.ClientWorker.invoke_BANG_(interpreter.clj:65)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909.invoke(interpreter.clj:140)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908.invoke(interpreter.clj:123)
+	at clojure.core$binding_conveyor_fn$fn__5823.invoke(core.clj:2047)
+	at clojure.lang.AFn.call(AFn.java:18)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-02-19 00:40:52,147{GMT}	INFO	[jepsen worker 0] jepsen.util: 8	:invoke	:broadcast	4
+2024-02-19 00:40:52,149{GMT}	INFO	[jepsen worker 0] jepsen.util: 8	:ok	:broadcast	4
+2024-02-19 00:40:52,313{GMT}	INFO	[jepsen worker 0] jepsen.util: 8	:invoke	:broadcast	5
+2024-02-19 00:40:52,314{GMT}	INFO	[jepsen worker 0] jepsen.util: 8	:ok	:broadcast	5
+2024-02-19 00:40:52,509{GMT}	INFO	[jepsen worker 0] jepsen.util: 8	:invoke	:broadcast	6
+2024-02-19 00:40:52,511{GMT}	INFO	[jepsen worker 0] jepsen.util: 8	:ok	:broadcast	6
+2024-02-19 00:40:52,641{GMT}	INFO	[jepsen worker 0] jepsen.util: 8	:invoke	:read	nil
+2024-02-19 00:40:52,648{GMT}	WARN	[jepsen worker 0] jepsen.generator.interpreter: Process 8 crashed
+clojure.lang.ExceptionInfo: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "read", :msg_id 4}
+
+And expected a response of the form:
+
+{:type (eq "read_ok"),
+ :messages [Any],
+ {:k :msg_id} Int,
+ :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 4, :message_ids [0 1 2 3 4 5 6], :type "read_ok"}
+
+This is malformed because:
+
+{:messages missing-required-key, :message_ids disallowed-key}
+
+See doc/protocol.md for more guidance.
+	at slingshot.support$stack_trace.invoke(support.clj:201)
+	at maelstrom.client$check_body.invokeStatic(client.clj:188)
+	at maelstrom.client$check_body.invoke(client.clj:181)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$client$reify__16644.invoke_BANG_(broadcast.clj:207)
+	at jepsen.client.Validate.invoke_BANG_(client.clj:83)
+	at jepsen.generator.interpreter.ClientWorker.invoke_BANG_(interpreter.clj:65)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909.invoke(interpreter.clj:140)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908.invoke(interpreter.clj:123)
+	at clojure.core$binding_conveyor_fn$fn__5823.invoke(core.clj:2047)
+	at clojure.lang.AFn.call(AFn.java:18)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-02-19 00:40:52,728{GMT}	INFO	[jepsen worker 0] jepsen.util: 9	:invoke	:broadcast	7
+2024-02-19 00:40:52,730{GMT}	INFO	[jepsen worker 0] jepsen.util: 9	:ok	:broadcast	7
+2024-02-19 00:40:52,870{GMT}	INFO	[jepsen worker 0] jepsen.util: 9	:invoke	:broadcast	8
+2024-02-19 00:40:52,871{GMT}	INFO	[jepsen worker 0] jepsen.util: 9	:ok	:broadcast	8
+2024-02-19 00:40:53,052{GMT}	INFO	[jepsen worker 0] jepsen.util: 9	:invoke	:read	nil
+2024-02-19 00:40:53,058{GMT}	WARN	[jepsen worker 0] jepsen.generator.interpreter: Process 9 crashed
+clojure.lang.ExceptionInfo: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "read", :msg_id 3}
+
+And expected a response of the form:
+
+{:type (eq "read_ok"),
+ :messages [Any],
+ {:k :msg_id} Int,
+ :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 3, :message_ids [0 1 2 3 4 5 6 7 8], :type "read_ok"}
+
+This is malformed because:
+
+{:messages missing-required-key, :message_ids disallowed-key}
+
+See doc/protocol.md for more guidance.
+	at slingshot.support$stack_trace.invoke(support.clj:201)
+	at maelstrom.client$check_body.invokeStatic(client.clj:188)
+	at maelstrom.client$check_body.invoke(client.clj:181)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$client$reify__16644.invoke_BANG_(broadcast.clj:207)
+	at jepsen.client.Validate.invoke_BANG_(client.clj:83)
+	at jepsen.generator.interpreter.ClientWorker.invoke_BANG_(interpreter.clj:65)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909.invoke(interpreter.clj:140)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908.invoke(interpreter.clj:123)
+	at clojure.core$binding_conveyor_fn$fn__5823.invoke(core.clj:2047)
+	at clojure.lang.AFn.call(AFn.java:18)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-02-19 00:40:53,253{GMT}	INFO	[jepsen worker 0] jepsen.util: 10	:invoke	:broadcast	9
+2024-02-19 00:40:53,254{GMT}	INFO	[jepsen worker 0] jepsen.util: 10	:ok	:broadcast	9
+2024-02-19 00:40:53,408{GMT}	INFO	[jepsen worker 0] jepsen.util: 10	:invoke	:read	nil
+2024-02-19 00:40:53,413{GMT}	WARN	[jepsen worker 0] jepsen.generator.interpreter: Process 10 crashed
+clojure.lang.ExceptionInfo: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "read", :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "read_ok"),
+ :messages [Any],
+ {:k :msg_id} Int,
+ :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message_ids [0 1 2 3 4 5 6 7 8 9], :type "read_ok"}
+
+This is malformed because:
+
+{:messages missing-required-key, :message_ids disallowed-key}
+
+See doc/protocol.md for more guidance.
+	at slingshot.support$stack_trace.invoke(support.clj:201)
+	at maelstrom.client$check_body.invokeStatic(client.clj:188)
+	at maelstrom.client$check_body.invoke(client.clj:181)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$fn__16576$read__16577.invoke(broadcast.clj:34)
+	at maelstrom.workload.broadcast$client$reify__16644.invoke_BANG_(broadcast.clj:207)
+	at jepsen.client.Validate.invoke_BANG_(client.clj:83)
+	at jepsen.generator.interpreter.ClientWorker.invoke_BANG_(interpreter.clj:65)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909.invoke(interpreter.clj:140)
+	at jepsen.generator.interpreter$spawn_worker$fn__12908.invoke(interpreter.clj:123)
+	at clojure.core$binding_conveyor_fn$fn__5823.invoke(core.clj:2047)
+	at clojure.lang.AFn.call(AFn.java:18)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-02-19 00:40:53,464{GMT}	INFO	[jepsen worker 0] jepsen.util: 11	:invoke	:broadcast	10
+2024-02-19 00:40:53,465{GMT}	INFO	[jepsen worker 0] jepsen.util: 11	:ok	:broadcast	10
+2024-02-19 00:40:53,559{GMT}	INFO	[Jepsen shutdown hook] jepsen.core: Downloading DB logs before JVM shutdown...

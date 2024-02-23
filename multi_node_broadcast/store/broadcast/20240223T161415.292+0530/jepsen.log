@@ -1,0 +1,295 @@
+2024-02-23 16:14:15,810{GMT}	INFO	[jepsen test runner] jepsen.core: Test version a6ecf26472b81b804f34a302bd07c0bb804a8801 (plus uncommitted changes)
+2024-02-23 16:14:15,811{GMT}	INFO	[jepsen test runner] jepsen.core: Command line:
+lein run test -w broadcast --bin /Users/danishsharma/go/src/gossip-glamers/multi_node_broadcast/bin --node-count 5 --time-limit 20 --rate 10
+2024-02-23 16:14:15,888{GMT}	INFO	[jepsen test runner] jepsen.core: Running test:
+{:args []
+ :remote
+ #jepsen.control.retry.Remote{:remote #jepsen.control.scp.Remote{:cmd-remote #jepsen.control.sshj.SSHJRemote{:concurrency-limit 6,
+                                                                                                             :conn-spec nil,
+                                                                                                             :client nil,
+                                                                                                             :semaphore nil},
+                                                                 :conn-spec nil},
+                              :conn nil}
+ :log-net-send false
+ :node-count 5
+ :availability nil
+ :max-txn-length 4
+ :concurrency 5
+ :db
+ #object[maelstrom.db$db$reify__16142
+         "0x36573ec5"
+         "maelstrom.db$db$reify__16142@36573ec5"]
+ :max-writes-per-key 16
+ :leave-db-running? false
+ :name "broadcast"
+ :logging-json? false
+ :start-time
+ #object[org.joda.time.DateTime "0x686279e0" "2024-02-23T16:14:15.292+05:30"]
+ :nemesis-interval 10
+ :net
+ #object[maelstrom.net$jepsen_net$reify__15251
+         "0x6b28d4e4"
+         "maelstrom.net$jepsen_net$reify__15251@6b28d4e4"]
+ :client
+ #object[maelstrom.workload.broadcast$client$reify__16644
+         "0x41cfcbb5"
+         "maelstrom.workload.broadcast$client$reify__16644@41cfcbb5"]
+ :barrier
+ #object[java.util.concurrent.CyclicBarrier
+         "0x40941b54"
+         "java.util.concurrent.CyclicBarrier@40941b54"]
+ :log-stderr false
+ :pure-generators true
+ :ssh {:dummy? true}
+ :rate 10.0
+ :checker
+ #object[jepsen.checker$compose$reify__11881
+         "0x3b42d7df"
+         "jepsen.checker$compose$reify__11881@3b42d7df"]
+ :argv
+ ("test"
+  "-w"
+  "broadcast"
+  "--bin"
+  "/Users/danishsharma/go/src/gossip-glamers/multi_node_broadcast/bin"
+  "--node-count"
+  "5"
+  "--time-limit"
+  "20"
+  "--rate"
+  "10")
+ :nemesis
+ (jepsen.nemesis.ReflCompose
+  {:fm {:start-partition 0,
+        :stop-partition 0,
+        :kill 1,
+        :start 1,
+        :pause 1,
+        :resume 1},
+   :nemeses [#unprintable "jepsen.nemesis.combined$partition_nemesis$reify__16416@1660bba7"
+             #unprintable "jepsen.nemesis.combined$db_nemesis$reify__16397@29cd48bd"]})
+ :nodes ["n0" "n1" "n2" "n3" "n4"]
+ :test-count 1
+ :latency {:mean 0, :dist :constant}
+ :bin "/Users/danishsharma/go/src/gossip-glamers/multi_node_broadcast/bin"
+ :generator
+ ((jepsen.generator.Synchronize
+   {:gen (jepsen.generator.TimeLimit
+          {:limit 20000000000,
+           :cutoff nil,
+           :gen (jepsen.generator.Any
+                 {:gens [(jepsen.generator.OnThreads
+                          {:f #{:nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                                   "0x2a2f7a61"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__9167@2a2f7a61"],
+                           :gen nil})
+                         (jepsen.generator.OnThreads
+                          {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                                   "0x8d40f07"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__9167@8d40f07"],
+                           :gen (jepsen.generator.Stagger
+                                 {:dt 200000000,
+                                  :next-time nil,
+                                  :gen (jepsen.generator.Mix
+                                        {:i 1,
+                                         :gens [({:f :broadcast, :value 0}
+                                                 {:f :broadcast, :value 1}
+                                                 {:f :broadcast, :value 2}
+                                                 {:f :broadcast, :value 3}
+                                                 {:f :broadcast, :value 4}
+                                                 {:f :broadcast, :value 5}
+                                                 {:f :broadcast, :value 6}
+                                                 {:f :broadcast, :value 7}
+                                                 ...)
+                                                ({:f :read}
+                                                 {:f :read}
+                                                 {:f :read}
+                                                 {:f :read}
+                                                 {:f :read}
+                                                 {:f :read}
+                                                 {:f :read}
+                                                 {:f :read}
+                                                 ...)]})})})]})})})
+  (jepsen.generator.Synchronize
+   {:gen (jepsen.generator.OnThreads
+          {:f #{:nemesis},
+           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                   "0x307ca947"
+                                   "jepsen.generator.context$make_thread_filter$lazy_filter__9167@307ca947"],
+           :gen ()})})
+  (jepsen.generator.Synchronize
+   {:gen {:type :log, :value "Waiting for recovery..."}})
+  (jepsen.generator.Synchronize {:gen {:type :sleep, :value 10}})
+  (jepsen.generator.Synchronize
+   {:gen (jepsen.generator.OnThreads
+          {:f #jepsen.generator.context.AllBut{:element :nemesis},
+           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                   "0x61d1315b"
+                                   "jepsen.generator.context$make_thread_filter$lazy_filter__9167@61d1315b"],
+           :gen (jepsen.generator.EachThread
+                 {:fresh-gen {:f :read, :final? true},
+                  :context-filters #object[clojure.core$promise$reify__8591
+                                           "0x49d5b651"
+                                           {:status :pending, :val nil}],
+                  :gens {}})})}))
+ :log-net-recv false
+ :os
+ #object[maelstrom.net$jepsen_os$reify__15254
+         "0x34989ceb"
+         "maelstrom.net$jepsen_os$reify__15254@34989ceb"]
+ :time-limit 20
+ :workload :broadcast
+ :consistency-models [:strict-serializable]
+ :topology :grid}
+
+2024-02-23 16:14:17,640{GMT}	INFO	[jepsen node n0] maelstrom.net: Starting Maelstrom network
+2024-02-23 16:14:17,641{GMT}	INFO	[jepsen test runner] jepsen.db: Tearing down DB
+2024-02-23 16:14:17,644{GMT}	INFO	[jepsen test runner] jepsen.db: Setting up DB
+2024-02-23 16:14:17,645{GMT}	INFO	[jepsen node n2] maelstrom.db: Setting up n2
+2024-02-23 16:14:17,645{GMT}	INFO	[jepsen node n4] maelstrom.db: Setting up n4
+2024-02-23 16:14:17,645{GMT}	INFO	[jepsen node n3] maelstrom.db: Setting up n3
+2024-02-23 16:14:17,645{GMT}	INFO	[jepsen node n1] maelstrom.db: Setting up n1
+2024-02-23 16:14:17,646{GMT}	INFO	[jepsen node n4] maelstrom.process: launching /Users/danishsharma/go/src/gossip-glamers/multi_node_broadcast/bin []
+2024-02-23 16:14:17,646{GMT}	INFO	[jepsen node n3] maelstrom.process: launching /Users/danishsharma/go/src/gossip-glamers/multi_node_broadcast/bin []
+2024-02-23 16:14:17,646{GMT}	INFO	[jepsen node n1] maelstrom.process: launching /Users/danishsharma/go/src/gossip-glamers/multi_node_broadcast/bin []
+2024-02-23 16:14:17,646{GMT}	INFO	[jepsen node n2] maelstrom.process: launching /Users/danishsharma/go/src/gossip-glamers/multi_node_broadcast/bin []
+2024-02-23 16:14:17,646{GMT}	INFO	[jepsen node n0] maelstrom.service: Starting services: (lin-kv lin-tso lww-kv seq-kv)
+2024-02-23 16:14:17,647{GMT}	INFO	[jepsen node n0] maelstrom.db: Setting up n0
+2024-02-23 16:14:17,648{GMT}	INFO	[jepsen node n0] maelstrom.process: launching /Users/danishsharma/go/src/gossip-glamers/multi_node_broadcast/bin []
+2024-02-23 16:14:18,018{GMT}	INFO	[jepsen test runner] jepsen.core: Relative time begins now
+2024-02-23 16:14:18,038{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	nil
+2024-02-23 16:14:18,040{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[]
+2024-02-23 16:14:18,127{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	nil
+2024-02-23 16:14:18,129{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[]
+2024-02-23 16:14:18,193{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:broadcast	0
+2024-02-23 16:14:18,223{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:read	nil
+2024-02-23 16:14:18,229{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:read	[]
+2024-02-23 16:14:18,362{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:read	nil
+2024-02-23 16:14:18,365{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:ok	:read	[]
+2024-02-23 16:14:18,396{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	nil
+2024-02-23 16:14:18,398{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[]
+2024-02-23 16:14:18,448{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:broadcast	1
+2024-02-23 16:14:18,604{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	nil
+2024-02-23 16:14:18,607{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[]
+2024-02-23 16:14:18,778{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:broadcast	2
+2024-02-23 16:14:18,898{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:broadcast	3
+2024-02-23 16:14:19,101{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:broadcast	4
+2024-02-23 16:14:23,210{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:info	:broadcast	0	:net-timeout
+2024-02-23 16:14:23,212{GMT}	INFO	[jepsen worker 2] jepsen.util: 7	:invoke	:broadcast	5
+2024-02-23 16:14:23,455{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:info	:broadcast	1	:net-timeout
+2024-02-23 16:14:23,456{GMT}	INFO	[jepsen worker 0] jepsen.util: 5	:invoke	:broadcast	6
+2024-02-23 16:14:23,784{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:info	:broadcast	2	:net-timeout
+2024-02-23 16:14:23,785{GMT}	INFO	[jepsen worker 3] jepsen.util: 8	:invoke	:read	nil
+2024-02-23 16:14:23,904{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:info	:broadcast	3	:net-timeout
+2024-02-23 16:14:23,905{GMT}	INFO	[jepsen worker 4] jepsen.util: 9	:invoke	:broadcast	7
+2024-02-23 16:14:24,108{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:info	:broadcast	4	:net-timeout
+2024-02-23 16:14:24,108{GMT}	INFO	[jepsen worker 1] jepsen.util: 6	:invoke	:read	nil
+2024-02-23 16:14:28,216{GMT}	INFO	[jepsen worker 2] jepsen.util: 7	:info	:broadcast	5	:net-timeout
+2024-02-23 16:14:28,216{GMT}	INFO	[jepsen worker 2] jepsen.util: 12	:invoke	:read	nil
+2024-02-23 16:14:28,461{GMT}	INFO	[jepsen worker 0] jepsen.util: 5	:info	:broadcast	6	:net-timeout
+2024-02-23 16:14:28,462{GMT}	INFO	[jepsen worker 0] jepsen.util: 10	:invoke	:read	nil
+2024-02-23 16:14:28,789{GMT}	INFO	[jepsen worker 3] jepsen.util: 8	:fail	:read	nil	:net-timeout
+2024-02-23 16:14:28,789{GMT}	INFO	[jepsen worker 3] jepsen.util: 8	:invoke	:read	nil
+2024-02-23 16:14:28,911{GMT}	INFO	[jepsen worker 4] jepsen.util: 9	:info	:broadcast	7	:net-timeout
+2024-02-23 16:14:28,983{GMT}	INFO	[jepsen worker 4] jepsen.util: 14	:invoke	:read	nil
+2024-02-23 16:14:29,113{GMT}	INFO	[jepsen worker 1] jepsen.util: 6	:fail	:read	nil	:net-timeout
+2024-02-23 16:14:29,119{GMT}	INFO	[jepsen worker 1] jepsen.util: 6	:invoke	:broadcast	8
+2024-02-23 16:14:33,222{GMT}	INFO	[jepsen worker 2] jepsen.util: 12	:fail	:read	nil	:net-timeout
+2024-02-23 16:14:33,223{GMT}	INFO	[jepsen worker 2] jepsen.util: 12	:invoke	:read	nil
+2024-02-23 16:14:33,466{GMT}	INFO	[jepsen worker 0] jepsen.util: 10	:fail	:read	nil	:net-timeout
+2024-02-23 16:14:33,466{GMT}	INFO	[jepsen worker 0] jepsen.util: 10	:invoke	:read	nil
+2024-02-23 16:14:33,791{GMT}	INFO	[jepsen worker 3] jepsen.util: 8	:fail	:read	nil	:net-timeout
+2024-02-23 16:14:33,791{GMT}	INFO	[jepsen worker 3] jepsen.util: 8	:invoke	:broadcast	9
+2024-02-23 16:14:33,985{GMT}	INFO	[jepsen worker 4] jepsen.util: 14	:fail	:read	nil	:net-timeout
+2024-02-23 16:14:33,989{GMT}	INFO	[jepsen worker 4] jepsen.util: 14	:invoke	:read	nil
+2024-02-23 16:14:34,121{GMT}	INFO	[jepsen worker 1] jepsen.util: 6	:info	:broadcast	8	:net-timeout
+2024-02-23 16:14:34,121{GMT}	INFO	[jepsen worker 1] jepsen.util: 11	:invoke	:broadcast	10
+2024-02-23 16:14:38,224{GMT}	INFO	[jepsen worker 2] jepsen.util: 12	:fail	:read	nil	:net-timeout
+2024-02-23 16:14:38,469{GMT}	INFO	[jepsen worker 0] jepsen.util: 10	:fail	:read	nil	:net-timeout
+2024-02-23 16:14:38,794{GMT}	INFO	[jepsen worker 3] jepsen.util: 8	:info	:broadcast	9	:net-timeout
+2024-02-23 16:14:38,991{GMT}	INFO	[jepsen worker 4] jepsen.util: 14	:fail	:read	nil	:net-timeout
+2024-02-23 16:14:39,125{GMT}	INFO	[jepsen worker 1] jepsen.util: 11	:info	:broadcast	10	:net-timeout
+2024-02-23 16:14:39,125{GMT}	INFO	[jepsen worker 2] jepsen.generator.interpreter: Waiting for recovery...
+2024-02-23 16:14:49,133{GMT}	INFO	[jepsen worker 0] jepsen.util: 10	:invoke	:read	nil
+2024-02-23 16:14:49,133{GMT}	INFO	[jepsen worker 1] jepsen.util: 16	:invoke	:read	nil
+2024-02-23 16:14:49,133{GMT}	INFO	[jepsen worker 3] jepsen.util: 13	:invoke	:read	nil
+2024-02-23 16:14:49,133{GMT}	INFO	[jepsen worker 2] jepsen.util: 12	:invoke	:read	nil
+2024-02-23 16:14:49,133{GMT}	INFO	[jepsen worker 4] jepsen.util: 14	:invoke	:read	nil
+2024-02-23 16:14:54,136{GMT}	INFO	[jepsen worker 1] jepsen.util: 16	:fail	:read	nil	:net-timeout
+2024-02-23 16:14:54,136{GMT}	INFO	[jepsen worker 3] jepsen.util: 13	:fail	:read	nil	:net-timeout
+2024-02-23 16:14:54,136{GMT}	INFO	[jepsen worker 0] jepsen.util: 10	:fail	:read	nil	:net-timeout
+2024-02-23 16:14:54,136{GMT}	INFO	[jepsen worker 2] jepsen.util: 12	:fail	:read	nil	:net-timeout
+2024-02-23 16:14:54,136{GMT}	INFO	[jepsen worker 4] jepsen.util: 14	:fail	:read	nil	:net-timeout
+2024-02-23 16:14:54,189{GMT}	INFO	[jepsen test runner] jepsen.core: Run complete, writing
+2024-02-23 16:14:54,975{GMT}	INFO	[jepsen node n1] maelstrom.db: Tearing down n1
+2024-02-23 16:14:54,976{GMT}	INFO	[jepsen node n2] maelstrom.db: Tearing down n2
+2024-02-23 16:14:54,976{GMT}	INFO	[jepsen node n0] maelstrom.db: Tearing down n0
+2024-02-23 16:14:54,976{GMT}	INFO	[jepsen node n3] maelstrom.db: Tearing down n3
+2024-02-23 16:14:54,977{GMT}	INFO	[jepsen node n4] maelstrom.db: Tearing down n4
+2024-02-23 16:14:55,149{GMT}	INFO	[jepsen node n0] maelstrom.net: Shutting down Maelstrom network
+2024-02-23 16:14:55,155{GMT}	WARN	[jepsen test runner] jepsen.core: Test crashed!
+clojure.lang.ExceptionInfo: Node n1 crashed with exit status 2. Before crashing, it wrote to STDOUT:
+
+{"src":"n1","dest":"c2","body":{"in_reply_to":1,"type":"init_ok"}}
+{"src":"n1","dest":"c6","body":{"in_reply_to":1,"type":"topology_ok"}}
+{"src":"n1","dest":"c11","body":{"in_reply_to":1,"messages":[],"type":"read_ok"}}
+{"src":"n1","dest":"c11","body":{"in_reply_to":2,"messages":[],"type":"read_ok"}}
+
+And to STDERR:
+
+2024/02/23 16:14:18 Received {c2 n1 {"type":"init","node_id":"n1","node_ids":["n0","n1","n2","n3","n4"],"msg_id":1}}
+2024/02/23 16:14:18 Node n1 initialized
+2024/02/23 16:14:18 Sent {"src":"n1","dest":"c2","body":{"in_reply_to":1,"type":"init_ok"}}
+2024/02/23 16:14:18 Received {c6 n1 {"type":"topology","topology":{"n0":["n3","n1"],"n1":["n4","n2","n0"],"n2":["n1"],"n3":["n0","n4"],"n4":["n1","n3"]},"msg_id":1}}
+2024/02/23 16:14:18 Sent {"src":"n1","dest":"c6","body":{"in_reply_to":1,"type":"topology_ok"}}
+2024/02/23 16:14:18 Received {c11 n1 {"type":"read","msg_id":1}}
+2024/02/23 16:14:18 Sent {"src":"n1","dest":"c11","body":{"in_reply_to":1,"messages":[],"type":"read_ok"}}
+2024/02/23 16:14:18 Received {c11 n1 {"type":"read","msg_id":2}}
+2024/02/23 16:14:18 Sent {"src":"n1","dest":"c11","body":{"in_reply_to":2,"messages":[],"type":"read_ok"}}
+2024/02/23 16:14:19 Received {c11 n1 {"type":"broadcast","message":4,"msg_id":3}}
+panic: assignment to entry in nil map
+
+goroutine 38 [running]:
+main.(*server).broadcastHandler(0xc000194040, {{0xc000196370, 0x3}, {0xc000196374, 0x2}, {0xc0001d4060, 0x2b, 0x30}})
+	/Users/danishsharma/go/src/gossip-glamers/multi_node_broadcast/main.go:45 +0x15b
+github.com/jepsen-io/maelstrom/demo/go.(*Node).handleMessage(0x0?, 0x0?, {{0xc000196370, 0x3}, {0xc000196374, 0x2}, {0xc0001d4060, 0x2b, 0x30}})
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:151 +0x96
+github.com/jepsen-io/maelstrom/demo/go.(*Node).Run.func2()
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:129 +0x88
+created by github.com/jepsen-io/maelstrom/demo/go.(*Node).Run
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:127 +0x41b
+
+Full STDERR logs are available in /Users/danishsharma/go/src/gossip-glamers/multi_node_broadcast/store/broadcast/20240223T161415.292+0530/node-logs/n1.log
+	at slingshot.support$stack_trace.invoke(support.clj:201)
+	at maelstrom.process$stop_node_BANG_.invokeStatic(process.clj:239)
+	at maelstrom.process$stop_node_BANG_.invoke(process.clj:217)
+	at maelstrom.db$db$reify__16142.teardown_BANG_(db.clj:75)
+	at jepsen.db$fn__8744$G__8725__8748.invoke(db.clj:12)
+	at jepsen.db$fn__8744$G__8724__8753.invoke(db.clj:12)
+	at clojure.core$partial$fn__5908.invoke(core.clj:2642)
+	at jepsen.control$on_nodes$fn__8599.invoke(control.clj:314)
+	at clojure.lang.AFn.applyToHelper(AFn.java:154)
+	at clojure.lang.AFn.applyTo(AFn.java:144)
+	at clojure.core$apply.invokeStatic(core.clj:667)
+	at clojure.core$with_bindings_STAR_.invokeStatic(core.clj:1990)
+	at clojure.core$with_bindings_STAR_.doInvoke(core.clj:1990)
+	at clojure.lang.RestFn.applyTo(RestFn.java:142)
+	at clojure.core$apply.invokeStatic(core.clj:671)
+	at clojure.core$bound_fn_STAR_$fn__5818.doInvoke(core.clj:2020)
+	at clojure.lang.RestFn.invoke(RestFn.java:408)
+	at dom_top.core$real_pmap_helper$build_thread__211$fn__212.invoke(core.clj:163)
+	at clojure.lang.AFn.applyToHelper(AFn.java:152)
+	at clojure.lang.AFn.applyTo(AFn.java:144)
+	at clojure.core$apply.invokeStatic(core.clj:667)
+	at clojure.core$with_bindings_STAR_.invokeStatic(core.clj:1990)
+	at clojure.core$with_bindings_STAR_.doInvoke(core.clj:1990)
+	at clojure.lang.RestFn.invoke(RestFn.java:425)
+	at clojure.lang.AFn.applyToHelper(AFn.java:156)
+	at clojure.lang.RestFn.applyTo(RestFn.java:132)
+	at clojure.core$apply.invokeStatic(core.clj:671)
+	at clojure.core$bound_fn_STAR_$fn__5818.doInvoke(core.clj:2020)
+	at clojure.lang.RestFn.invoke(RestFn.java:397)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.base/java.lang.Thread.run(Thread.java:1583)

@@ -1,0 +1,19 @@
+2024/02/23 16:14:18 Received {c1 n3 {"type":"init","node_id":"n3","node_ids":["n0","n1","n2","n3","n4"],"msg_id":1}}
+2024/02/23 16:14:18 Node n3 initialized
+2024/02/23 16:14:18 Sent {"src":"n3","dest":"c1","body":{"in_reply_to":1,"type":"init_ok"}}
+2024/02/23 16:14:18 Received {c9 n3 {"type":"topology","topology":{"n0":["n3","n1"],"n1":["n4","n2","n0"],"n2":["n1"],"n3":["n0","n4"],"n4":["n1","n3"]},"msg_id":1}}
+2024/02/23 16:14:18 Sent {"src":"n3","dest":"c9","body":{"in_reply_to":1,"type":"topology_ok"}}
+2024/02/23 16:14:18 Received {c13 n3 {"type":"read","msg_id":1}}
+2024/02/23 16:14:18 Sent {"src":"n3","dest":"c13","body":{"in_reply_to":1,"messages":[],"type":"read_ok"}}
+2024/02/23 16:14:18 Received {c13 n3 {"type":"broadcast","message":2,"msg_id":2}}
+panic: assignment to entry in nil map
+
+goroutine 4 [running]:
+main.(*server).broadcastHandler(0xc0001aa040, {{0xc0000180e8, 0x3}, {0xc0000180ec, 0x2}, {0xc0000200c0, 0x2b, 0x30}})
+	/Users/danishsharma/go/src/gossip-glamers/multi_node_broadcast/main.go:45 +0x15b
+github.com/jepsen-io/maelstrom/demo/go.(*Node).handleMessage(0x0?, 0x0?, {{0xc0000180e8, 0x3}, {0xc0000180ec, 0x2}, {0xc0000200c0, 0x2b, 0x30}})
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:151 +0x96
+github.com/jepsen-io/maelstrom/demo/go.(*Node).Run.func2()
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:129 +0x88
+created by github.com/jepsen-io/maelstrom/demo/go.(*Node).Run
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:127 +0x41b

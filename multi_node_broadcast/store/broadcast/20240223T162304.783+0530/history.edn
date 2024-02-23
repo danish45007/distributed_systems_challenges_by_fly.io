@@ -1,0 +1,68 @@
+{:index 0, :time 15983115, :type :invoke, :process 0, :f :broadcast, :value 0}
+{:index 1, :time 71682831, :type :invoke, :process 1, :f :broadcast, :value 1}
+{:index 2, :time 141051425, :type :invoke, :process 2, :f :read, :value nil}
+{:index 3, :time 145022313, :type :ok, :process 2, :f :read, :value []}
+{:index 4, :time 174250389, :type :invoke, :process 3, :f :read, :value nil}
+{:index 5, :time 177272358, :type :ok, :process 3, :f :read, :value []}
+{:index 6, :time 235571178, :type :invoke, :process 4, :f :read, :value nil}
+{:index 7, :time 238599929, :type :ok, :process 4, :f :read, :value []}
+{:index 8, :time 329441450, :type :invoke, :process 2, :f :read, :value nil}
+{:index 9, :time 331151743, :type :ok, :process 2, :f :read, :value []}
+{:index 10, :time 425402341, :type :invoke, :process 2, :f :broadcast, :value 2}
+{:index 11, :time 608813192, :type :invoke, :process 3, :f :read, :value nil}
+{:index 12, :time 612988827, :type :ok, :process 3, :f :read, :value []}
+{:index 13, :time 743948702, :type :invoke, :process 3, :f :read, :value nil}
+{:index 14, :time 746560260, :type :ok, :process 3, :f :read, :value []}
+{:index 15, :time 795308403, :type :invoke, :process 3, :f :broadcast, :value 3}
+{:index 16, :time 874812328, :type :invoke, :process 4, :f :read, :value nil}
+{:index 17, :time 877263249, :type :ok, :process 4, :f :read, :value []}
+{:index 18, :time 961310084, :type :invoke, :process 4, :f :read, :value nil}
+{:index 19, :time 964798393, :type :ok, :process 4, :f :read, :value []}
+{:index 20, :time 987826505, :type :invoke, :process 4, :f :read, :value nil}
+{:index 21, :time 994475408, :type :ok, :process 4, :f :read, :value []}
+{:index 22, :time 1127711675, :type :invoke, :process 4, :f :broadcast, :value 4}
+{:index 23, :time 5023231264, :type :info, :process 0, :f :broadcast, :value 0, :error :net-timeout}
+{:index 24, :time 5023605198, :type :invoke, :process 5, :f :broadcast, :value 5}
+{:index 25, :time 5076300824, :type :info, :process 1, :f :broadcast, :value 1, :error :net-timeout}
+{:index 26, :time 5147376660, :type :invoke, :process 6, :f :broadcast, :value 6}
+{:index 27, :time 5430459417, :type :info, :process 2, :f :broadcast, :value 2, :error :net-timeout}
+{:index 28, :time 5430750055, :type :invoke, :process 7, :f :broadcast, :value 7}
+{:index 29, :time 5798442083, :type :info, :process 3, :f :broadcast, :value 3, :error :net-timeout}
+{:index 30, :time 5798710983, :type :invoke, :process 8, :f :broadcast, :value 8}
+{:index 31, :time 6134595134, :type :info, :process 4, :f :broadcast, :value 4, :error :net-timeout}
+{:index 32, :time 6134869669, :type :invoke, :process 9, :f :broadcast, :value 9}
+{:index 33, :time 10026372984, :type :info, :process 5, :f :broadcast, :value 5, :error :net-timeout}
+{:index 34, :time 10026616075, :type :invoke, :process 10, :f :read, :value nil}
+{:index 35, :time 10154292720, :type :info, :process 6, :f :broadcast, :value 6, :error :net-timeout}
+{:index 36, :time 10154498704, :type :invoke, :process 11, :f :broadcast, :value 10}
+{:index 37, :time 10433440820, :type :info, :process 7, :f :broadcast, :value 7, :error :net-timeout}
+{:index 38, :time 10433696302, :type :invoke, :process 12, :f :broadcast, :value 11}
+{:index 39, :time 10818741852, :type :info, :process 8, :f :broadcast, :value 8, :error :net-timeout}
+{:index 40, :time 10818963526, :type :invoke, :process 13, :f :read, :value nil}
+{:index 41, :time 11137990897, :type :info, :process 9, :f :broadcast, :value 9, :error :net-timeout}
+{:index 42, :time 11138262338, :type :invoke, :process 14, :f :read, :value nil}
+{:index 43, :time 15030893265, :type :fail, :process 10, :f :read, :value nil, :error :net-timeout}
+{:index 44, :time 15031055749, :type :invoke, :process 10, :f :read, :value nil}
+{:index 45, :time 15161360055, :type :info, :process 11, :f :broadcast, :value 10, :error :net-timeout}
+{:index 46, :time 15161573628, :type :invoke, :process 16, :f :broadcast, :value 12}
+{:index 47, :time 15436048883, :type :info, :process 12, :f :broadcast, :value 11, :error :net-timeout}
+{:index 48, :time 15436308587, :type :invoke, :process 17, :f :broadcast, :value 13}
+{:index 49, :time 15822213747, :type :fail, :process 13, :f :read, :value nil, :error :net-timeout}
+{:index 50, :time 15822402444, :type :invoke, :process 13, :f :broadcast, :value 14}
+{:index 51, :time 16141369550, :type :fail, :process 14, :f :read, :value nil, :error :net-timeout}
+{:index 52, :time 16141555063, :type :invoke, :process 14, :f :read, :value nil}
+{:index 53, :time 20036739708, :type :fail, :process 10, :f :read, :value nil, :error :net-timeout}
+{:index 54, :time 20167972925, :type :info, :process 16, :f :broadcast, :value 12, :error :net-timeout}
+{:index 55, :time 20441401313, :type :info, :process 17, :f :broadcast, :value 13, :error :net-timeout}
+{:index 56, :time 20826587391, :type :info, :process 13, :f :broadcast, :value 14, :error :net-timeout}
+{:index 57, :time 21147189819, :type :fail, :process 14, :f :read, :value nil, :error :net-timeout}
+{:index 58, :time 31153343823, :type :invoke, :process 21, :f :read, :value nil, :final? true}
+{:index 59, :time 31156775138, :type :invoke, :process 14, :f :read, :value nil, :final? true}
+{:index 60, :time 31157083180, :type :invoke, :process 18, :f :read, :value nil, :final? true}
+{:index 61, :time 31157339165, :type :invoke, :process 10, :f :read, :value nil, :final? true}
+{:index 62, :time 31158157068, :type :invoke, :process 22, :f :read, :value nil, :final? true}
+{:index 63, :time 36163662710, :type :fail, :process 14, :f :read, :value nil, :final? true, :error :net-timeout}
+{:index 64, :time 36163792924, :type :fail, :process 18, :f :read, :value nil, :final? true, :error :net-timeout}
+{:index 65, :time 36163889033, :type :fail, :process 22, :f :read, :value nil, :final? true, :error :net-timeout}
+{:index 66, :time 36164752806, :type :fail, :process 21, :f :read, :value nil, :final? true, :error :net-timeout}
+{:index 67, :time 36164799468, :type :fail, :process 10, :f :read, :value nil, :final? true, :error :net-timeout}

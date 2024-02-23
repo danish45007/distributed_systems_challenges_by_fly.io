@@ -1,0 +1,304 @@
+2024/02/23 19:16:19 Received {c3 n1 {"type":"init","node_id":"n1","node_ids":["n0","n1","n2","n3","n4"],"msg_id":1}}
+2024/02/23 19:16:19 Node n1 initialized
+2024/02/23 19:16:19 Sent {"src":"n1","dest":"c3","body":{"in_reply_to":1,"type":"init_ok"}}
+2024/02/23 19:16:19 Received {c6 n1 {"type":"topology","topology":{"n0":["n3","n1"],"n1":["n4","n2","n0"],"n2":["n1"],"n3":["n0","n4"],"n4":["n1","n3"]},"msg_id":1}}
+2024/02/23 19:16:19 Sent {"src":"n1","dest":"c6","body":{"in_reply_to":1,"type":"topology_ok"}}
+2024/02/23 19:16:19 Received {c10 n1 {"type":"read","msg_id":1}}
+2024/02/23 19:16:19 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":1,"messages":[],"type":"read_ok"}}
+2024/02/23 19:16:19 Received {n2 n1 {"message":0,"msg_id":1,"type":"broadcast"}}
+2024/02/23 19:16:19 Sent {"src":"n1","dest":"n2","body":{"in_reply_to":1,"type":"broadcast_ok"}}
+2024/02/23 19:16:19 Sent {"src":"n1","dest":"n4","body":{"message":0,"msg_id":1,"type":"broadcast"}}
+2024/02/23 19:16:19 Sent {"src":"n1","dest":"n3","body":{"message":0,"msg_id":1,"type":"broadcast"}}
+2024/02/23 19:16:19 Sent {"src":"n1","dest":"n0","body":{"message":0,"msg_id":1,"type":"broadcast"}}
+2024/02/23 19:16:19 Sent {"src":"n1","dest":"n1","body":{"message":0,"msg_id":1,"type":"broadcast"}}
+2024/02/23 19:16:19 Sent {"src":"n1","dest":"n2","body":{"message":0,"msg_id":1,"type":"broadcast"}}
+2024/02/23 19:16:19 Received {n1 n1 {"message":0,"msg_id":1,"type":"broadcast"}}
+2024/02/23 19:16:20 Received {c10 n1 {"type":"broadcast","message":2,"msg_id":2}}
+2024/02/23 19:16:20 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":2,"type":"broadcast_ok"}}
+2024/02/23 19:16:20 Sent {"src":"n1","dest":"n1","body":{"message":2,"msg_id":2,"type":"broadcast"}}
+2024/02/23 19:16:20 Sent {"src":"n1","dest":"n4","body":{"message":2,"msg_id":2,"type":"broadcast"}}
+2024/02/23 19:16:20 Sent {"src":"n1","dest":"n0","body":{"message":2,"msg_id":2,"type":"broadcast"}}
+2024/02/23 19:16:20 Sent {"src":"n1","dest":"n3","body":{"message":2,"msg_id":2,"type":"broadcast"}}
+2024/02/23 19:16:20 Sent {"src":"n1","dest":"n2","body":{"message":2,"msg_id":2,"type":"broadcast"}}
+2024/02/23 19:16:20 Received {n1 n1 {"message":2,"msg_id":2,"type":"broadcast"}}
+2024/02/23 19:16:20 Received {n2 n1 {"message":2,"msg_id":2,"type":"broadcast"}}
+2024/02/23 19:16:20 Received {n2 n1 {"in_reply_to":2,"type":"broadcast_ok"}}
+2024/02/23 19:16:20 Ignoring reply to 2 with no callback
+2024/02/23 19:16:20 Received {c10 n1 {"type":"broadcast","message":4,"msg_id":3}}
+2024/02/23 19:16:20 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":3,"type":"broadcast_ok"}}
+2024/02/23 19:16:20 Sent {"src":"n1","dest":"n2","body":{"message":4,"msg_id":3,"type":"broadcast"}}
+2024/02/23 19:16:20 Sent {"src":"n1","dest":"n0","body":{"message":4,"msg_id":3,"type":"broadcast"}}
+2024/02/23 19:16:20 Sent {"src":"n1","dest":"n4","body":{"message":4,"msg_id":3,"type":"broadcast"}}
+2024/02/23 19:16:20 Sent {"src":"n1","dest":"n1","body":{"message":4,"msg_id":3,"type":"broadcast"}}
+2024/02/23 19:16:20 Sent {"src":"n1","dest":"n3","body":{"message":4,"msg_id":3,"type":"broadcast"}}
+2024/02/23 19:16:20 Received {n1 n1 {"message":4,"msg_id":3,"type":"broadcast"}}
+2024/02/23 19:16:20 Received {n2 n1 {"in_reply_to":3,"type":"broadcast_ok"}}
+2024/02/23 19:16:20 Ignoring reply to 3 with no callback
+2024/02/23 19:16:20 Received {n2 n1 {"message":4,"msg_id":3,"type":"broadcast"}}
+2024/02/23 19:16:21 Received {c10 n1 {"type":"broadcast","message":6,"msg_id":4}}
+2024/02/23 19:16:21 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":4,"type":"broadcast_ok"}}
+2024/02/23 19:16:21 Sent {"src":"n1","dest":"n1","body":{"message":6,"msg_id":4,"type":"broadcast"}}
+2024/02/23 19:16:21 Sent {"src":"n1","dest":"n4","body":{"message":6,"msg_id":4,"type":"broadcast"}}
+2024/02/23 19:16:21 Sent {"src":"n1","dest":"n0","body":{"message":6,"msg_id":4,"type":"broadcast"}}
+2024/02/23 19:16:21 Sent {"src":"n1","dest":"n2","body":{"message":6,"msg_id":4,"type":"broadcast"}}
+2024/02/23 19:16:21 Sent {"src":"n1","dest":"n3","body":{"message":6,"msg_id":4,"type":"broadcast"}}
+2024/02/23 19:16:21 Received {n1 n1 {"message":6,"msg_id":4,"type":"broadcast"}}
+2024/02/23 19:16:21 Received {n2 n1 {"in_reply_to":4,"type":"broadcast_ok"}}
+2024/02/23 19:16:21 Ignoring reply to 4 with no callback
+2024/02/23 19:16:21 Received {n2 n1 {"message":6,"msg_id":4,"type":"broadcast"}}
+2024/02/23 19:16:21 Received {c10 n1 {"type":"read","msg_id":5}}
+2024/02/23 19:16:21 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":5,"messages":[0,0,0,0,4,6,0,2],"type":"read_ok"}}
+2024/02/23 19:16:21 Received {n2 n1 {"message":9,"msg_id":5,"type":"broadcast"}}
+2024/02/23 19:16:21 Sent {"src":"n1","dest":"n2","body":{"in_reply_to":5,"type":"broadcast_ok"}}
+2024/02/23 19:16:21 Sent {"src":"n1","dest":"n4","body":{"message":9,"msg_id":5,"type":"broadcast"}}
+2024/02/23 19:16:21 Sent {"src":"n1","dest":"n0","body":{"message":9,"msg_id":5,"type":"broadcast"}}
+2024/02/23 19:16:21 Sent {"src":"n1","dest":"n1","body":{"message":9,"msg_id":5,"type":"broadcast"}}
+2024/02/23 19:16:21 Sent {"src":"n1","dest":"n2","body":{"message":9,"msg_id":5,"type":"broadcast"}}
+2024/02/23 19:16:21 Sent {"src":"n1","dest":"n3","body":{"message":9,"msg_id":5,"type":"broadcast"}}
+2024/02/23 19:16:21 Received {n1 n1 {"message":9,"msg_id":5,"type":"broadcast"}}
+2024/02/23 19:16:22 Received {c10 n1 {"type":"broadcast","message":13,"msg_id":6}}
+2024/02/23 19:16:22 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":6,"type":"broadcast_ok"}}
+2024/02/23 19:16:22 Sent {"src":"n1","dest":"n1","body":{"message":13,"msg_id":6,"type":"broadcast"}}
+2024/02/23 19:16:22 Sent {"src":"n1","dest":"n4","body":{"message":13,"msg_id":6,"type":"broadcast"}}
+2024/02/23 19:16:22 Sent {"src":"n1","dest":"n2","body":{"message":13,"msg_id":6,"type":"broadcast"}}
+2024/02/23 19:16:22 Sent {"src":"n1","dest":"n3","body":{"message":13,"msg_id":6,"type":"broadcast"}}
+2024/02/23 19:16:22 Sent {"src":"n1","dest":"n0","body":{"message":13,"msg_id":6,"type":"broadcast"}}
+2024/02/23 19:16:22 Received {n1 n1 {"message":13,"msg_id":6,"type":"broadcast"}}
+2024/02/23 19:16:22 Received {n2 n1 {"in_reply_to":6,"type":"broadcast_ok"}}
+2024/02/23 19:16:22 Ignoring reply to 6 with no callback
+2024/02/23 19:16:22 Received {n2 n1 {"message":13,"msg_id":6,"type":"broadcast"}}
+2024/02/23 19:16:23 Received {c10 n1 {"type":"read","msg_id":7}}
+2024/02/23 19:16:23 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":7,"messages":[0,0,0,0,0,0,9,13,0,2,4,6],"type":"read_ok"}}
+2024/02/23 19:16:23 Received {n2 n1 {"message":16,"msg_id":7,"type":"broadcast"}}
+2024/02/23 19:16:23 Sent {"src":"n1","dest":"n2","body":{"in_reply_to":7,"type":"broadcast_ok"}}
+2024/02/23 19:16:23 Sent {"src":"n1","dest":"n3","body":{"message":16,"msg_id":7,"type":"broadcast"}}
+2024/02/23 19:16:23 Sent {"src":"n1","dest":"n1","body":{"message":16,"msg_id":7,"type":"broadcast"}}
+2024/02/23 19:16:23 Sent {"src":"n1","dest":"n0","body":{"message":16,"msg_id":7,"type":"broadcast"}}
+2024/02/23 19:16:23 Sent {"src":"n1","dest":"n2","body":{"message":16,"msg_id":7,"type":"broadcast"}}
+2024/02/23 19:16:23 Sent {"src":"n1","dest":"n4","body":{"message":16,"msg_id":7,"type":"broadcast"}}
+2024/02/23 19:16:23 Received {n1 n1 {"message":16,"msg_id":7,"type":"broadcast"}}
+2024/02/23 19:16:23 Received {c10 n1 {"type":"read","msg_id":8}}
+2024/02/23 19:16:23 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":8,"messages":[0,0,0,0,0,0,0,9,13,16,0,2,4,6],"type":"read_ok"}}
+2024/02/23 19:16:24 Received {c10 n1 {"type":"read","msg_id":9}}
+2024/02/23 19:16:24 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":9,"messages":[0,0,0,0,0,0,0,2,4,6,9,13,16,0],"type":"read_ok"}}
+2024/02/23 19:16:24 Received {c10 n1 {"type":"broadcast","message":24,"msg_id":10}}
+2024/02/23 19:16:24 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":10,"type":"broadcast_ok"}}
+2024/02/23 19:16:24 Sent {"src":"n1","dest":"n1","body":{"message":24,"msg_id":10,"type":"broadcast"}}
+2024/02/23 19:16:24 Sent {"src":"n1","dest":"n0","body":{"message":24,"msg_id":10,"type":"broadcast"}}
+2024/02/23 19:16:24 Sent {"src":"n1","dest":"n2","body":{"message":24,"msg_id":10,"type":"broadcast"}}
+2024/02/23 19:16:24 Sent {"src":"n1","dest":"n4","body":{"message":24,"msg_id":10,"type":"broadcast"}}
+2024/02/23 19:16:24 Sent {"src":"n1","dest":"n3","body":{"message":24,"msg_id":10,"type":"broadcast"}}
+2024/02/23 19:16:24 Received {n1 n1 {"message":24,"msg_id":10,"type":"broadcast"}}
+2024/02/23 19:16:24 Received {n2 n1 {"in_reply_to":10,"type":"broadcast_ok"}}
+2024/02/23 19:16:24 Ignoring reply to 10 with no callback
+2024/02/23 19:16:24 Received {n2 n1 {"message":24,"msg_id":10,"type":"broadcast"}}
+2024/02/23 19:16:25 Received {c10 n1 {"type":"read","msg_id":11}}
+2024/02/23 19:16:25 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":11,"messages":[0,0,0,0,0,0,0,0,16,24,0,2,4,6,9,13],"type":"read_ok"}}
+2024/02/23 19:16:25 Received {n2 n1 {"message":28,"msg_id":11,"type":"broadcast"}}
+2024/02/23 19:16:25 Sent {"src":"n1","dest":"n2","body":{"in_reply_to":11,"type":"broadcast_ok"}}
+2024/02/23 19:16:25 Sent {"src":"n1","dest":"n1","body":{"message":28,"msg_id":11,"type":"broadcast"}}
+2024/02/23 19:16:25 Sent {"src":"n1","dest":"n3","body":{"message":28,"msg_id":11,"type":"broadcast"}}
+2024/02/23 19:16:25 Sent {"src":"n1","dest":"n4","body":{"message":28,"msg_id":11,"type":"broadcast"}}
+2024/02/23 19:16:25 Sent {"src":"n1","dest":"n0","body":{"message":28,"msg_id":11,"type":"broadcast"}}
+2024/02/23 19:16:25 Sent {"src":"n1","dest":"n2","body":{"message":28,"msg_id":11,"type":"broadcast"}}
+2024/02/23 19:16:25 Received {n1 n1 {"message":28,"msg_id":11,"type":"broadcast"}}
+2024/02/23 19:16:25 Received {c10 n1 {"type":"read","msg_id":12}}
+2024/02/23 19:16:25 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":12,"messages":[0,0,0,0,0,0,0,0,0,0,4,6,9,28,2,13,16,24],"type":"read_ok"}}
+2024/02/23 19:16:26 Received {n2 n1 {"message":30,"msg_id":12,"type":"broadcast"}}
+2024/02/23 19:16:26 Sent {"src":"n1","dest":"n1","body":{"message":30,"msg_id":12,"type":"broadcast"}}
+2024/02/23 19:16:26 Sent {"src":"n1","dest":"n2","body":{"in_reply_to":12,"type":"broadcast_ok"}}
+2024/02/23 19:16:26 Sent {"src":"n1","dest":"n0","body":{"message":30,"msg_id":12,"type":"broadcast"}}
+2024/02/23 19:16:26 Sent {"src":"n1","dest":"n4","body":{"message":30,"msg_id":12,"type":"broadcast"}}
+2024/02/23 19:16:26 Sent {"src":"n1","dest":"n2","body":{"message":30,"msg_id":12,"type":"broadcast"}}
+2024/02/23 19:16:26 Sent {"src":"n1","dest":"n3","body":{"message":30,"msg_id":12,"type":"broadcast"}}
+2024/02/23 19:16:26 Received {n1 n1 {"message":30,"msg_id":12,"type":"broadcast"}}
+2024/02/23 19:16:26 Received {c10 n1 {"type":"read","msg_id":13}}
+2024/02/23 19:16:26 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":13,"messages":[0,0,0,0,0,0,0,0,0,0,13,16,24,30,2,4,6,9,28,0],"type":"read_ok"}}
+2024/02/23 19:16:26 Received {n2 n1 {"message":33,"msg_id":13,"type":"broadcast"}}
+2024/02/23 19:16:26 Sent {"src":"n1","dest":"n2","body":{"in_reply_to":13,"type":"broadcast_ok"}}
+2024/02/23 19:16:26 Sent {"src":"n1","dest":"n1","body":{"message":33,"msg_id":13,"type":"broadcast"}}
+2024/02/23 19:16:26 Sent {"src":"n1","dest":"n2","body":{"message":33,"msg_id":13,"type":"broadcast"}}
+2024/02/23 19:16:26 Sent {"src":"n1","dest":"n4","body":{"message":33,"msg_id":13,"type":"broadcast"}}
+2024/02/23 19:16:26 Sent {"src":"n1","dest":"n0","body":{"message":33,"msg_id":13,"type":"broadcast"}}
+2024/02/23 19:16:26 Sent {"src":"n1","dest":"n3","body":{"message":33,"msg_id":13,"type":"broadcast"}}
+2024/02/23 19:16:26 Received {n1 n1 {"message":33,"msg_id":13,"type":"broadcast"}}
+2024/02/23 19:16:27 Received {c10 n1 {"type":"read","msg_id":14}}
+2024/02/23 19:16:27 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":14,"messages":[0,0,0,0,0,0,0,0,0,0,0,2,13,16,24,30,0,4,6,9,28,33],"type":"read_ok"}}
+2024/02/23 19:16:27 Received {c10 n1 {"type":"broadcast","message":36,"msg_id":15}}
+2024/02/23 19:16:27 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":15,"type":"broadcast_ok"}}
+2024/02/23 19:16:27 Sent {"src":"n1","dest":"n1","body":{"message":36,"msg_id":15,"type":"broadcast"}}
+2024/02/23 19:16:27 Sent {"src":"n1","dest":"n4","body":{"message":36,"msg_id":15,"type":"broadcast"}}
+2024/02/23 19:16:27 Sent {"src":"n1","dest":"n2","body":{"message":36,"msg_id":15,"type":"broadcast"}}
+2024/02/23 19:16:27 Sent {"src":"n1","dest":"n3","body":{"message":36,"msg_id":15,"type":"broadcast"}}
+2024/02/23 19:16:27 Sent {"src":"n1","dest":"n0","body":{"message":36,"msg_id":15,"type":"broadcast"}}
+2024/02/23 19:16:27 Received {n1 n1 {"message":36,"msg_id":15,"type":"broadcast"}}
+2024/02/23 19:16:27 Received {n2 n1 {"message":36,"msg_id":15,"type":"broadcast"}}
+2024/02/23 19:16:27 Received {n2 n1 {"in_reply_to":15,"type":"broadcast_ok"}}
+2024/02/23 19:16:27 Ignoring reply to 15 with no callback
+2024/02/23 19:16:28 Received {c10 n1 {"type":"read","msg_id":16}}
+2024/02/23 19:16:28 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":16,"messages":[0,0,0,0,0,0,0,0,0,0,0,0,28,33,36,0,4,6,9,30,2,13,16,24],"type":"read_ok"}}
+2024/02/23 19:16:28 Received {c10 n1 {"type":"read","msg_id":17}}
+2024/02/23 19:16:28 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":17,"messages":[0,0,0,0,0,0,0,0,0,0,0,0,13,16,24,30,2,4,6,9,28,33,36,0],"type":"read_ok"}}
+2024/02/23 19:16:28 Received {n2 n1 {"message":41,"msg_id":17,"type":"broadcast"}}
+2024/02/23 19:16:28 Sent {"src":"n1","dest":"n2","body":{"in_reply_to":17,"type":"broadcast_ok"}}
+2024/02/23 19:16:28 Sent {"src":"n1","dest":"n4","body":{"message":41,"msg_id":17,"type":"broadcast"}}
+2024/02/23 19:16:28 Sent {"src":"n1","dest":"n2","body":{"message":41,"msg_id":17,"type":"broadcast"}}
+2024/02/23 19:16:28 Sent {"src":"n1","dest":"n0","body":{"message":41,"msg_id":17,"type":"broadcast"}}
+2024/02/23 19:16:28 Sent {"src":"n1","dest":"n1","body":{"message":41,"msg_id":17,"type":"broadcast"}}
+2024/02/23 19:16:28 Sent {"src":"n1","dest":"n3","body":{"message":41,"msg_id":17,"type":"broadcast"}}
+2024/02/23 19:16:28 Received {n1 n1 {"message":41,"msg_id":17,"type":"broadcast"}}
+2024/02/23 19:16:29 Received {c10 n1 {"type":"broadcast","message":44,"msg_id":18}}
+2024/02/23 19:16:29 Sent {"src":"n1","dest":"n1","body":{"message":44,"msg_id":18,"type":"broadcast"}}
+2024/02/23 19:16:29 Sent {"src":"n1","dest":"n4","body":{"message":44,"msg_id":18,"type":"broadcast"}}
+2024/02/23 19:16:29 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":18,"type":"broadcast_ok"}}
+2024/02/23 19:16:29 Sent {"src":"n1","dest":"n0","body":{"message":44,"msg_id":18,"type":"broadcast"}}
+2024/02/23 19:16:29 Sent {"src":"n1","dest":"n2","body":{"message":44,"msg_id":18,"type":"broadcast"}}
+2024/02/23 19:16:29 Sent {"src":"n1","dest":"n3","body":{"message":44,"msg_id":18,"type":"broadcast"}}
+2024/02/23 19:16:29 Received {n1 n1 {"message":44,"msg_id":18,"type":"broadcast"}}
+2024/02/23 19:16:29 Received {n2 n1 {"in_reply_to":18,"type":"broadcast_ok"}}
+2024/02/23 19:16:29 Ignoring reply to 18 with no callback
+2024/02/23 19:16:29 Received {n2 n1 {"message":44,"msg_id":18,"type":"broadcast"}}
+2024/02/23 19:16:29 Received {n2 n1 {"message":45,"msg_id":18,"type":"broadcast"}}
+2024/02/23 19:16:29 Sent {"src":"n1","dest":"n2","body":{"in_reply_to":18,"type":"broadcast_ok"}}
+2024/02/23 19:16:29 Sent {"src":"n1","dest":"n0","body":{"message":45,"msg_id":18,"type":"broadcast"}}
+2024/02/23 19:16:29 Sent {"src":"n1","dest":"n2","body":{"message":45,"msg_id":18,"type":"broadcast"}}
+2024/02/23 19:16:29 Sent {"src":"n1","dest":"n4","body":{"message":45,"msg_id":18,"type":"broadcast"}}
+2024/02/23 19:16:29 Sent {"src":"n1","dest":"n1","body":{"message":45,"msg_id":18,"type":"broadcast"}}
+2024/02/23 19:16:29 Sent {"src":"n1","dest":"n3","body":{"message":45,"msg_id":18,"type":"broadcast"}}
+2024/02/23 19:16:29 Received {n1 n1 {"message":45,"msg_id":18,"type":"broadcast"}}
+2024/02/23 19:16:30 Received {c10 n1 {"type":"read","msg_id":19}}
+2024/02/23 19:16:30 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":19,"messages":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,9,44,24,30,28,33,36,41,45,0,4,16,2,13],"type":"read_ok"}}
+2024/02/23 19:16:30 Received {c10 n1 {"type":"read","msg_id":20}}
+2024/02/23 19:16:30 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":20,"messages":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,9,44,24,30,28,33,36,41,45,0,4,16,2,13],"type":"read_ok"}}
+2024/02/23 19:16:31 Received {n2 n1 {"message":52,"msg_id":20,"type":"broadcast"}}
+2024/02/23 19:16:31 Sent {"src":"n1","dest":"n2","body":{"in_reply_to":20,"type":"broadcast_ok"}}
+2024/02/23 19:16:31 Sent {"src":"n1","dest":"n1","body":{"message":52,"msg_id":20,"type":"broadcast"}}
+2024/02/23 19:16:31 Sent {"src":"n1","dest":"n2","body":{"message":52,"msg_id":20,"type":"broadcast"}}
+2024/02/23 19:16:31 Sent {"src":"n1","dest":"n3","body":{"message":52,"msg_id":20,"type":"broadcast"}}
+2024/02/23 19:16:31 Sent {"src":"n1","dest":"n4","body":{"message":52,"msg_id":20,"type":"broadcast"}}
+2024/02/23 19:16:31 Sent {"src":"n1","dest":"n0","body":{"message":52,"msg_id":20,"type":"broadcast"}}
+2024/02/23 19:16:31 Received {n1 n1 {"message":52,"msg_id":20,"type":"broadcast"}}
+2024/02/23 19:16:31 Received {c10 n1 {"type":"read","msg_id":21}}
+2024/02/23 19:16:31 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":21,"messages":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,28,33,36,41,45,0,13,16,2,9,6,30,44,52,24],"type":"read_ok"}}
+2024/02/23 19:16:31 Received {n2 n1 {"message":55,"msg_id":21,"type":"broadcast"}}
+2024/02/23 19:16:31 Sent {"src":"n1","dest":"n2","body":{"in_reply_to":21,"type":"broadcast_ok"}}
+2024/02/23 19:16:31 Sent {"src":"n1","dest":"n1","body":{"message":55,"msg_id":21,"type":"broadcast"}}
+2024/02/23 19:16:31 Sent {"src":"n1","dest":"n0","body":{"message":55,"msg_id":21,"type":"broadcast"}}
+2024/02/23 19:16:31 Sent {"src":"n1","dest":"n2","body":{"message":55,"msg_id":21,"type":"broadcast"}}
+2024/02/23 19:16:31 Sent {"src":"n1","dest":"n4","body":{"message":55,"msg_id":21,"type":"broadcast"}}
+2024/02/23 19:16:31 Sent {"src":"n1","dest":"n3","body":{"message":55,"msg_id":21,"type":"broadcast"}}
+2024/02/23 19:16:31 Received {n1 n1 {"message":55,"msg_id":21,"type":"broadcast"}}
+2024/02/23 19:16:32 Received {c10 n1 {"type":"read","msg_id":22}}
+2024/02/23 19:16:32 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":22,"messages":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,52,24,30,44,33,36,41,45,55,0,4,28,2,13,16,6,9],"type":"read_ok"}}
+2024/02/23 19:16:32 Received {n2 n1 {"message":58,"msg_id":22,"type":"broadcast"}}
+2024/02/23 19:16:32 Sent {"src":"n1","dest":"n2","body":{"in_reply_to":22,"type":"broadcast_ok"}}
+2024/02/23 19:16:32 Sent {"src":"n1","dest":"n0","body":{"message":58,"msg_id":22,"type":"broadcast"}}
+2024/02/23 19:16:32 Sent {"src":"n1","dest":"n1","body":{"message":58,"msg_id":22,"type":"broadcast"}}
+2024/02/23 19:16:32 Sent {"src":"n1","dest":"n3","body":{"message":58,"msg_id":22,"type":"broadcast"}}
+2024/02/23 19:16:32 Sent {"src":"n1","dest":"n4","body":{"message":58,"msg_id":22,"type":"broadcast"}}
+2024/02/23 19:16:32 Sent {"src":"n1","dest":"n2","body":{"message":58,"msg_id":22,"type":"broadcast"}}
+2024/02/23 19:16:32 Received {n1 n1 {"message":58,"msg_id":22,"type":"broadcast"}}
+2024/02/23 19:16:33 Received {c10 n1 {"type":"read","msg_id":23}}
+2024/02/23 19:16:33 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":23,"messages":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,24,30,44,52,58,55,0,4,28,33,36,41,45,2,13,16,6,9],"type":"read_ok"}}
+2024/02/23 19:16:33 Received {c10 n1 {"type":"broadcast","message":64,"msg_id":24}}
+2024/02/23 19:16:33 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":24,"type":"broadcast_ok"}}
+2024/02/23 19:16:33 Sent {"src":"n1","dest":"n0","body":{"message":64,"msg_id":24,"type":"broadcast"}}
+2024/02/23 19:16:33 Sent {"src":"n1","dest":"n1","body":{"message":64,"msg_id":24,"type":"broadcast"}}
+2024/02/23 19:16:33 Sent {"src":"n1","dest":"n4","body":{"message":64,"msg_id":24,"type":"broadcast"}}
+2024/02/23 19:16:33 Sent {"src":"n1","dest":"n2","body":{"message":64,"msg_id":24,"type":"broadcast"}}
+2024/02/23 19:16:33 Sent {"src":"n1","dest":"n3","body":{"message":64,"msg_id":24,"type":"broadcast"}}
+2024/02/23 19:16:33 Received {n1 n1 {"message":64,"msg_id":24,"type":"broadcast"}}
+2024/02/23 19:16:33 Received {n2 n1 {"in_reply_to":24,"type":"broadcast_ok"}}
+2024/02/23 19:16:33 Ignoring reply to 24 with no callback
+2024/02/23 19:16:33 Received {n2 n1 {"message":64,"msg_id":24,"type":"broadcast"}}
+2024/02/23 19:16:34 Received {c10 n1 {"type":"read","msg_id":25}}
+2024/02/23 19:16:34 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":25,"messages":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,52,58,24,30,44,33,36,41,45,55,0,4,28,64,2,13,16,6,9],"type":"read_ok"}}
+2024/02/23 19:16:34 Received {c10 n1 {"type":"read","msg_id":26}}
+2024/02/23 19:16:34 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":26,"messages":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,9,44,52,58,24,30,28,33,36,41,45,55,0,4,64,16,2,13],"type":"read_ok"}}
+2024/02/23 19:16:35 Received {c10 n1 {"type":"read","msg_id":27}}
+2024/02/23 19:16:35 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":27,"messages":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,58,24,30,44,52,36,41,45,55,0,4,28,33,64,2,13,16,6,9],"type":"read_ok"}}
+2024/02/23 19:16:35 Received {n2 n1 {"message":74,"msg_id":27,"type":"broadcast"}}
+2024/02/23 19:16:35 Sent {"src":"n1","dest":"n2","body":{"in_reply_to":27,"type":"broadcast_ok"}}
+2024/02/23 19:16:35 Sent {"src":"n1","dest":"n1","body":{"message":74,"msg_id":27,"type":"broadcast"}}
+2024/02/23 19:16:35 Sent {"src":"n1","dest":"n0","body":{"message":74,"msg_id":27,"type":"broadcast"}}
+2024/02/23 19:16:35 Sent {"src":"n1","dest":"n2","body":{"message":74,"msg_id":27,"type":"broadcast"}}
+2024/02/23 19:16:35 Sent {"src":"n1","dest":"n4","body":{"message":74,"msg_id":27,"type":"broadcast"}}
+2024/02/23 19:16:35 Sent {"src":"n1","dest":"n3","body":{"message":74,"msg_id":27,"type":"broadcast"}}
+2024/02/23 19:16:35 Received {n1 n1 {"message":74,"msg_id":27,"type":"broadcast"}}
+2024/02/23 19:16:35 Received {c10 n1 {"type":"read","msg_id":28}}
+2024/02/23 19:16:35 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":28,"messages":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,24,30,44,52,58,74,55,0,4,28,33,36,41,45,64,2,13,16,6,9],"type":"read_ok"}}
+2024/02/23 19:16:35 Received {n2 n1 {"message":76,"msg_id":28,"type":"broadcast"}}
+2024/02/23 19:16:35 Sent {"src":"n1","dest":"n2","body":{"in_reply_to":28,"type":"broadcast_ok"}}
+2024/02/23 19:16:35 Sent {"src":"n1","dest":"n1","body":{"message":76,"msg_id":28,"type":"broadcast"}}
+2024/02/23 19:16:35 Sent {"src":"n1","dest":"n0","body":{"message":76,"msg_id":28,"type":"broadcast"}}
+2024/02/23 19:16:35 Sent {"src":"n1","dest":"n2","body":{"message":76,"msg_id":28,"type":"broadcast"}}
+2024/02/23 19:16:35 Sent {"src":"n1","dest":"n4","body":{"message":76,"msg_id":28,"type":"broadcast"}}
+2024/02/23 19:16:35 Sent {"src":"n1","dest":"n3","body":{"message":76,"msg_id":28,"type":"broadcast"}}
+2024/02/23 19:16:35 Received {n1 n1 {"message":76,"msg_id":28,"type":"broadcast"}}
+2024/02/23 19:16:36 Received {c10 n1 {"type":"read","msg_id":29}}
+2024/02/23 19:16:36 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":29,"messages":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,16,2,13,76,6,9,44,52,58,74,24,30,28,33,36,41,45,55,0,4,64],"type":"read_ok"}}
+2024/02/23 19:16:36 Received {n2 n1 {"message":79,"msg_id":29,"type":"broadcast"}}
+2024/02/23 19:16:36 Sent {"src":"n1","dest":"n2","body":{"in_reply_to":29,"type":"broadcast_ok"}}
+2024/02/23 19:16:36 Sent {"src":"n1","dest":"n1","body":{"message":79,"msg_id":29,"type":"broadcast"}}
+2024/02/23 19:16:36 Sent {"src":"n1","dest":"n4","body":{"message":79,"msg_id":29,"type":"broadcast"}}
+2024/02/23 19:16:36 Sent {"src":"n1","dest":"n3","body":{"message":79,"msg_id":29,"type":"broadcast"}}
+2024/02/23 19:16:36 Sent {"src":"n1","dest":"n0","body":{"message":79,"msg_id":29,"type":"broadcast"}}
+2024/02/23 19:16:36 Sent {"src":"n1","dest":"n2","body":{"message":79,"msg_id":29,"type":"broadcast"}}
+2024/02/23 19:16:36 Received {n1 n1 {"message":79,"msg_id":29,"type":"broadcast"}}
+2024/02/23 19:16:37 Received {c10 n1 {"type":"broadcast","message":83,"msg_id":30}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":30,"type":"broadcast_ok"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n1","body":{"message":83,"msg_id":30,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n4","body":{"message":83,"msg_id":30,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n0","body":{"message":83,"msg_id":30,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n3","body":{"message":83,"msg_id":30,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n2","body":{"message":83,"msg_id":30,"type":"broadcast"}}
+2024/02/23 19:16:37 Received {n1 n1 {"message":83,"msg_id":30,"type":"broadcast"}}
+2024/02/23 19:16:37 Received {n2 n1 {"in_reply_to":30,"type":"broadcast_ok"}}
+2024/02/23 19:16:37 Ignoring reply to 30 with no callback
+2024/02/23 19:16:37 Received {n2 n1 {"message":83,"msg_id":30,"type":"broadcast"}}
+2024/02/23 19:16:37 Received {n2 n1 {"message":84,"msg_id":30,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n2","body":{"in_reply_to":30,"type":"broadcast_ok"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n1","body":{"message":84,"msg_id":30,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n3","body":{"message":84,"msg_id":30,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n0","body":{"message":84,"msg_id":30,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n4","body":{"message":84,"msg_id":30,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n2","body":{"message":84,"msg_id":30,"type":"broadcast"}}
+2024/02/23 19:16:37 Received {n1 n1 {"message":84,"msg_id":30,"type":"broadcast"}}
+2024/02/23 19:16:37 Received {c10 n1 {"type":"broadcast","message":89,"msg_id":31}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n1","body":{"message":89,"msg_id":31,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n2","body":{"message":89,"msg_id":31,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n4","body":{"message":89,"msg_id":31,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n0","body":{"message":89,"msg_id":31,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":31,"type":"broadcast_ok"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n3","body":{"message":89,"msg_id":31,"type":"broadcast"}}
+2024/02/23 19:16:37 Received {n1 n1 {"message":89,"msg_id":31,"type":"broadcast"}}
+2024/02/23 19:16:37 Received {n2 n1 {"in_reply_to":31,"type":"broadcast_ok"}}
+2024/02/23 19:16:37 Ignoring reply to 31 with no callback
+2024/02/23 19:16:37 Received {n2 n1 {"message":89,"msg_id":31,"type":"broadcast"}}
+2024/02/23 19:16:37 Received {n2 n1 {"message":90,"msg_id":31,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n2","body":{"in_reply_to":31,"type":"broadcast_ok"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n4","body":{"message":90,"msg_id":31,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n1","body":{"message":90,"msg_id":31,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n0","body":{"message":90,"msg_id":31,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n3","body":{"message":90,"msg_id":31,"type":"broadcast"}}
+2024/02/23 19:16:37 Sent {"src":"n1","dest":"n2","body":{"message":90,"msg_id":31,"type":"broadcast"}}
+2024/02/23 19:16:37 Received {n1 n1 {"message":90,"msg_id":31,"type":"broadcast"}}
+2024/02/23 19:16:38 Received {c10 n1 {"type":"broadcast","message":92,"msg_id":32}}
+2024/02/23 19:16:38 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":32,"type":"broadcast_ok"}}
+2024/02/23 19:16:38 Sent {"src":"n1","dest":"n1","body":{"message":92,"msg_id":32,"type":"broadcast"}}
+2024/02/23 19:16:38 Sent {"src":"n1","dest":"n0","body":{"message":92,"msg_id":32,"type":"broadcast"}}
+2024/02/23 19:16:38 Sent {"src":"n1","dest":"n4","body":{"message":92,"msg_id":32,"type":"broadcast"}}
+2024/02/23 19:16:38 Sent {"src":"n1","dest":"n3","body":{"message":92,"msg_id":32,"type":"broadcast"}}
+2024/02/23 19:16:38 Sent {"src":"n1","dest":"n2","body":{"message":92,"msg_id":32,"type":"broadcast"}}
+2024/02/23 19:16:38 Received {n1 n1 {"message":92,"msg_id":32,"type":"broadcast"}}
+2024/02/23 19:16:38 Received {n2 n1 {"in_reply_to":32,"type":"broadcast_ok"}}
+2024/02/23 19:16:38 Ignoring reply to 32 with no callback
+2024/02/23 19:16:38 Received {n2 n1 {"message":92,"msg_id":32,"type":"broadcast"}}
+2024/02/23 19:16:38 Received {n2 n1 {"message":93,"msg_id":32,"type":"broadcast"}}
+2024/02/23 19:16:38 Sent {"src":"n1","dest":"n2","body":{"in_reply_to":32,"type":"broadcast_ok"}}
+2024/02/23 19:16:38 Sent {"src":"n1","dest":"n1","body":{"message":93,"msg_id":32,"type":"broadcast"}}
+2024/02/23 19:16:38 Sent {"src":"n1","dest":"n3","body":{"message":93,"msg_id":32,"type":"broadcast"}}
+2024/02/23 19:16:38 Sent {"src":"n1","dest":"n2","body":{"message":93,"msg_id":32,"type":"broadcast"}}
+2024/02/23 19:16:38 Sent {"src":"n1","dest":"n4","body":{"message":93,"msg_id":32,"type":"broadcast"}}
+2024/02/23 19:16:38 Sent {"src":"n1","dest":"n0","body":{"message":93,"msg_id":32,"type":"broadcast"}}
+2024/02/23 19:16:38 Received {n1 n1 {"message":93,"msg_id":32,"type":"broadcast"}}

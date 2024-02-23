@@ -1,0 +1,15 @@
+2024/02/19 00:33:50 Received {c0 n0 {"type":"init","node_id":"n0","node_ids":["n0"],"msg_id":1}}
+2024/02/19 00:33:50 Node n0 initialized
+2024/02/19 00:33:50 Sent {"src":"n0","dest":"c0","body":{"in_reply_to":1,"type":"init_ok"}}
+2024/02/19 00:33:50 Received {c1 n0 {"type":"topology","topology":{"n0":[]},"msg_id":1}}
+panic: assignment to entry in nil map
+
+goroutine 19 [running]:
+main.(*server).TopologyHandler(0xc000126120, {{0xc00011e2e0, 0x2}, {0xc00011e2e2, 0x2}, {0xc000120180, 0x33, 0x40}})
+	/Users/danishsharma/go/src/gossip-glamers/single_node_broadcast/main.go:80 +0x11f
+github.com/jepsen-io/maelstrom/demo/go.(*Node).handleMessage(0x0?, 0x0?, {{0xc00011e2e0, 0x2}, {0xc00011e2e2, 0x2}, {0xc000120180, 0x33, 0x40}})
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:151 +0x96
+github.com/jepsen-io/maelstrom/demo/go.(*Node).Run.func2()
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:129 +0x88
+created by github.com/jepsen-io/maelstrom/demo/go.(*Node).Run
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:127 +0x41b
