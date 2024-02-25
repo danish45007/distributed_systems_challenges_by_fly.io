@@ -1,0 +1,28 @@
+2024/02/25 18:54:12 Received {c3 n16 {"type":"init","node_id":"n16","node_ids":["n0","n1","n2","n3","n4","n5","n6","n7","n8","n9","n10","n11","n12","n13","n14","n15","n16","n17","n18","n19","n20","n21","n22","n23","n24"],"msg_id":1}}
+2024/02/25 18:54:12 Node n16 initialized
+2024/02/25 18:54:12 Sent {"src":"n16","dest":"c3","body":{"in_reply_to":1,"type":"init_ok"}}
+2024/02/25 18:54:12 Received {c41 n16 {"type":"topology","topology":{"n2":["n7","n3","n1"],"n21":["n16","n22","n20"],"n23":["n18","n24","n22"],"n5":["n10","n0","n6"],"n8":["n13","n3","n9","n7"],"n6":["n11","n1","n7","n5"],"n19":["n24","n14","n18"],"n14":["n19","n9","n13"],"n17":["n22","n12","n18","n16"],"n1":["n6","n2","n0"],"n24":["n19","n23"],"n4":["n9","n3"],"n0":["n5","n1"],"n18":["n23","n13","n19","n17"],"n9":["n14","n4","n8"],"n10":["n15","n5","n11"],"n22":["n17","n23","n21"],"n15":["n20","n10","n16"],"n13":["n18","n8","n14","n12"],"n3":["n8","n4","n2"],"n12":["n17","n7","n13","n11"],"n11":["n16","n6","n12","n10"],"n16":["n21","n11","n17","n15"],"n7":["n12","n2","n8","n6"],"n20":["n15","n21"]},"msg_id":1}}
+2024/02/25 18:54:12 Sent {"src":"n16","dest":"c41","body":{"in_reply_to":1,"type":"topology_ok"}}
+2024/02/25 18:54:12 Received {c66 n16 {"type":"read","msg_id":1}}
+2024/02/25 18:54:12 Sent {"src":"n16","dest":"c66","body":{"in_reply_to":1,"messages":[],"type":"read_ok"}}
+2024/02/25 18:54:12 Received {c66 n16 {"type":"broadcast","message":23,"msg_id":2}}
+2024/02/25 18:54:12 Sent {"src":"n16","dest":"c66","body":{"in_reply_to":2,"type":"broadcast_ok"}}
+2024/02/25 18:54:13 Received {c66 n16 {"type":"read","msg_id":3}}
+2024/02/25 18:54:13 Sent {"src":"n16","dest":"c66","body":{"in_reply_to":3,"messages":[23],"type":"read_ok"}}
+2024/02/25 18:54:13 Sent {"src":"n16","dest":"n12","body":{"messages":[23],"msg_id":1,"type":"broadcast"}}
+2024/02/25 18:54:13 Received {n12 n16 {"messages":[5,20,1,15,10,2,6,11,14,7,3,9,0,13,4,16,12,8,34],"msg_id":7,"type":"broadcast"}}
+2024/02/25 18:54:13 Received {c66 n16 {"type":"read","msg_id":4}}
+2024/02/25 18:54:13 Sent {"src":"n16","dest":"n12","body":{"in_reply_to":7,"type":"broadcast_ok"}}
+2024/02/25 18:54:13 Sent {"src":"n16","dest":"c66","body":{"in_reply_to":4,"messages":[7,9,8,34,1,2,16,10,20,15,6,3,13,12,5,11,14,0,4,23],"type":"read_ok"}}
+2024/02/25 18:54:13 Received {n12 n16 {"in_reply_to":1,"type":"broadcast_ok"}}
+panic: sync: negative WaitGroup counter
+
+goroutine 10 [running]:
+sync.(*WaitGroup).Add(0x3?, 0x100a12a?)
+	/Users/danishsharma/git/brew/Cellar/go/1.20.5/libexec/src/sync/waitgroup.go:62 +0xe5
+sync.(*WaitGroup).Done(0xc00006e080?)
+	/Users/danishsharma/git/brew/Cellar/go/1.20.5/libexec/src/sync/waitgroup.go:87 +0x25
+main.(*server).batchRPC.func1()
+	/Users/danishsharma/go/src/gossip-glamers/efficient_broadcast_2/main.go:251 +0x257
+created by main.(*server).batchRPC
+	/Users/danishsharma/go/src/gossip-glamers/efficient_broadcast_2/main.go:241 +0xd4

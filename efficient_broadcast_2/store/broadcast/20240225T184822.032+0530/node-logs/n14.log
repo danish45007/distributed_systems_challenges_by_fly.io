@@ -1,0 +1,20 @@
+2024/02/25 18:48:25 Received {c12 n14 {"type":"init","node_id":"n14","node_ids":["n0","n1","n2","n3","n4","n5","n6","n7","n8","n9","n10","n11","n12","n13","n14","n15","n16","n17","n18","n19","n20","n21","n22","n23","n24"],"msg_id":1}}
+2024/02/25 18:48:25 Node n14 initialized
+2024/02/25 18:48:25 Sent {"src":"n14","dest":"c12","body":{"in_reply_to":1,"type":"init_ok"}}
+2024/02/25 18:48:25 Received {c39 n14 {"type":"topology","topology":{"n2":["n7","n3","n1"],"n21":["n16","n22","n20"],"n23":["n18","n24","n22"],"n5":["n10","n0","n6"],"n8":["n13","n3","n9","n7"],"n6":["n11","n1","n7","n5"],"n19":["n24","n14","n18"],"n14":["n19","n9","n13"],"n17":["n22","n12","n18","n16"],"n1":["n6","n2","n0"],"n24":["n19","n23"],"n4":["n9","n3"],"n0":["n5","n1"],"n18":["n23","n13","n19","n17"],"n9":["n14","n4","n8"],"n10":["n15","n5","n11"],"n22":["n17","n23","n21"],"n15":["n20","n10","n16"],"n13":["n18","n8","n14","n12"],"n3":["n8","n4","n2"],"n12":["n17","n7","n13","n11"],"n11":["n16","n6","n12","n10"],"n16":["n21","n11","n17","n15"],"n7":["n12","n2","n8","n6"],"n20":["n15","n21"]},"msg_id":1}}
+2024/02/25 18:48:25 Sent {"src":"n14","dest":"c39","body":{"in_reply_to":1,"type":"topology_ok"}}
+2024/02/25 18:48:26 Received {c64 n14 {"type":"broadcast","message":9,"msg_id":1}}
+2024/02/25 18:48:26 Sent {"src":"n14","dest":"c64","body":{"in_reply_to":1,"type":"broadcast_ok"}}
+panic: assignment to entry in nil map
+
+goroutine 5 [running]:
+main.(*server).broadcast(0xc0000ba100, {0xc0000180e8, 0x3}, 0x7?)
+	/Users/danishsharma/go/src/gossip-glamers/efficient_broadcast_2/main.go:185 +0x409
+main.(*server).broadcastHandler(0xc0000ba100, {{0xc0000180e8, 0x3}, {0xc0000180eb, 0x3}, {0xc0000200c0, 0x2b, 0x30}})
+	/Users/danishsharma/go/src/gossip-glamers/efficient_broadcast_2/main.go:132 +0x372
+github.com/jepsen-io/maelstrom/demo/go.(*Node).handleMessage(0x0?, 0x0?, {{0xc0000180e8, 0x3}, {0xc0000180eb, 0x3}, {0xc0000200c0, 0x2b, 0x30}})
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:151 +0x96
+github.com/jepsen-io/maelstrom/demo/go.(*Node).Run.func2()
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:129 +0x88
+created by github.com/jepsen-io/maelstrom/demo/go.(*Node).Run
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:127 +0x41b
