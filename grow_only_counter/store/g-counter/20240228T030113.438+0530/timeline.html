@@ -1,0 +1,328 @@
+<html><head><style>.ops        { position: absolute; }
+.op         { position: absolute; padding: 2px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); transition: all 0.3s cubic-bezier(.25,.8,.25,1); overflow: hidden; }
+.op.invoke  { background: #eeeeee; }
+.op.ok      { background: #6DB6FE; }
+.op.info    { background: #FFAA26; }
+.op.fail    { background: #FEB5DA; }
+.op:target  { box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); }
+</style></head><body><div><a href="/">jepsen</a> / <a href="/files/g-counter">g-counter</a> / <a href="/files/g-counter/20240228T030113.438+0530">20240228T030113.438+0530</a> / <a href="/files/g-counter/20240228T030113.438+0530/">independent</a> / <a href="/files/g-counter/20240228T030113.438+0530/independent/"></a></div><h1>g-counter key </h1><div class="ops"><a href="#i2"><div class="op info" id="i2" style="width:100;left:0;top:32;height:16" title="Msg: :majorities-ring
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:13.457Z
+
+Op:
+{:process :nemesis
+ :type :info
+ :f :start-partition
+ :index 2
+ :value :majorities-ring}">:nemesis start-partition <br /></div></a><a href="#i3"><div class="op info" id="i3" style="width:100;left:0;top:48;height:16" title="Msg: [:isolated {&quot;n0&quot; #{&quot;n2&quot;}, &quot;n2&quot; #{&quot;n1&quot;}, &quot;n1&quot; #{&quot;n0&quot;}}]
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:13.461Z
+
+Op:
+{:process :nemesis
+ :type :info
+ :f :start-partition
+ :index 3
+ :value [:isolated {&quot;n0&quot; #{&quot;n2&quot;}, &quot;n2&quot; #{&quot;n1&quot;}, &quot;n1&quot; #{&quot;n0&quot;}}]}">:nemesis start-partition <br /></div></a><a href="#i5"><div class="op ok" id="i5" style="width:100;left:318;top:64;height:16" title="Dur: 2006 ms
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:15.485Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 5
+ :value 0}">2 read <br />0</div></a><a href="#i7"><div class="op ok" id="i7" style="width:100;left:318;top:96;height:16" title="Dur: 2003 ms
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:17.488Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 7
+ :value 0}">2 read <br />0</div></a><a href="#i9"><div class="op info" id="i9" style="width:100;left:106;top:0;height:976" title="Dur: 5013 ms
+Err: &quot;indeterminate: Client read timeout&quot;
+Wall-clock Time: 2024-02-27T21:31:18.465Z
+
+Op:
+{:process 0
+ :type :info
+ :f :read
+ :index 9
+ :error &quot;indeterminate: Client read timeout&quot;
+ :exception {:via [{:type clojure.lang.ExceptionInfo, :message &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}, :at [slingshot.support$stack_trace invoke &quot;support.clj&quot; 201]}], :trace [[slingshot.support$stack_trace invoke &quot;support.clj&quot; 201] [maelstrom.client$recv_BANG_ invokeStatic &quot;client.clj&quot; 98] [maelstrom.client$recv_BANG_ invoke &quot;client.clj&quot; 81] [maelstrom.client$send_PLUS_recv_BANG_ invokeStatic &quot;client.clj&quot; 123] [maelstrom.client$send_PLUS_recv_BANG_ invoke &quot;client.clj&quot; 119] [maelstrom.client$rpc_BANG_ invokeStatic &quot;client.clj&quot; 149] [maelstrom.client$rpc_BANG_ invoke &quot;client.clj&quot; 140] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$client$reify__19540 invoke_BANG_ &quot;pn_counter.clj&quot; 50] [jepsen.client.Validate invoke_BANG_ &quot;client.clj&quot; 83] [jepsen.generator.interpreter.ClientWorker invoke_BANG_ &quot;interpreter.clj&quot; 65] [jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909 invoke &quot;interpreter.clj&quot; 140] [jepsen.generator.interpreter$spawn_worker$fn__12908 invoke &quot;interpreter.clj&quot; 123] [clojure.core$binding_conveyor_fn$fn__5823 invoke &quot;core.clj&quot; 2047] [clojure.lang.AFn call &quot;AFn.java&quot; 18] [java.util.concurrent.FutureTask run &quot;FutureTask.java&quot; 317] [java.util.concurrent.ThreadPoolExecutor runWorker &quot;ThreadPoolExecutor.java&quot; 1144] [java.util.concurrent.ThreadPoolExecutor$Worker run &quot;ThreadPoolExecutor.java&quot; 642] [java.lang.Thread run &quot;Thread.java&quot; 1583]], :cause &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}}
+ :value }">0 read </div></a><a href="#i10"><div class="op info" id="i10" style="width:100;left:212;top:16;height:960" title="Dur: 5009 ms
+Err: &quot;indeterminate: Client read timeout&quot;
+Wall-clock Time: 2024-02-27T21:31:18.465Z
+
+Op:
+{:process 1
+ :type :info
+ :f :read
+ :index 10
+ :error &quot;indeterminate: Client read timeout&quot;
+ :exception {:via [{:type clojure.lang.ExceptionInfo, :message &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}, :at [slingshot.support$stack_trace invoke &quot;support.clj&quot; 201]}], :trace [[slingshot.support$stack_trace invoke &quot;support.clj&quot; 201] [maelstrom.client$recv_BANG_ invokeStatic &quot;client.clj&quot; 98] [maelstrom.client$recv_BANG_ invoke &quot;client.clj&quot; 81] [maelstrom.client$send_PLUS_recv_BANG_ invokeStatic &quot;client.clj&quot; 123] [maelstrom.client$send_PLUS_recv_BANG_ invoke &quot;client.clj&quot; 119] [maelstrom.client$rpc_BANG_ invokeStatic &quot;client.clj&quot; 149] [maelstrom.client$rpc_BANG_ invoke &quot;client.clj&quot; 140] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$client$reify__19540 invoke_BANG_ &quot;pn_counter.clj&quot; 50] [jepsen.client.Validate invoke_BANG_ &quot;client.clj&quot; 83] [jepsen.generator.interpreter.ClientWorker invoke_BANG_ &quot;interpreter.clj&quot; 65] [jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909 invoke &quot;interpreter.clj&quot; 140] [jepsen.generator.interpreter$spawn_worker$fn__12908 invoke &quot;interpreter.clj&quot; 123] [clojure.core$binding_conveyor_fn$fn__5823 invoke &quot;core.clj&quot; 2047] [clojure.lang.AFn call &quot;AFn.java&quot; 18] [java.util.concurrent.FutureTask run &quot;FutureTask.java&quot; 317] [java.util.concurrent.ThreadPoolExecutor runWorker &quot;ThreadPoolExecutor.java&quot; 1144] [java.util.concurrent.ThreadPoolExecutor$Worker run &quot;ThreadPoolExecutor.java&quot; 642] [java.lang.Thread run &quot;Thread.java&quot; 1583]], :cause &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}}
+ :value }">1 read </div></a><a href="#i13"><div class="op ok" id="i13" style="width:100;left:318;top:128;height:80" title="Dur: 2002 ms
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:19.490Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 13
+ :value 0}">2 read <br />0</div></a><a href="#i15"><div class="op ok" id="i15" style="width:100;left:318;top:224;height:16" title="Dur: 2 ms
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:19.493Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :add
+ :index 15
+ :value 2}">2 add 2</div></a><a href="#i17"><div class="op info" id="i17" style="width:100;left:0;top:272;height:16" title="Msg: nil
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:19.551Z
+
+Op:
+{:process :nemesis
+ :type :info
+ :f :stop-partition
+ :index 17
+ :value }">:nemesis stop-partition </div></a><a href="#i18"><div class="op info" id="i18" style="width:100;left:0;top:288;height:16" title="Msg: :network-healed
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:19.552Z
+
+Op:
+{:process :nemesis
+ :type :info
+ :f :stop-partition
+ :index 18
+ :value :network-healed}">:nemesis stop-partition <br /></div></a><a href="#i19"><div class="op ok" id="i19" style="width:100;left:318;top:256;height:48" title="Dur: 2004 ms
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:21.502Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 19
+ :value 2}">2 read <br />2</div></a><a href="#i21"><div class="op info" id="i21" style="width:100;left:424;top:176;height:800" title="Dur: 5005 ms
+Err: &quot;indeterminate: Client read timeout&quot;
+Wall-clock Time: 2024-02-27T21:31:23.470Z
+
+Op:
+{:process 3
+ :type :info
+ :f :read
+ :index 21
+ :error &quot;indeterminate: Client read timeout&quot;
+ :exception {:via [{:type clojure.lang.ExceptionInfo, :message &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}, :at [slingshot.support$stack_trace invoke &quot;support.clj&quot; 201]}], :trace [[slingshot.support$stack_trace invoke &quot;support.clj&quot; 201] [maelstrom.client$recv_BANG_ invokeStatic &quot;client.clj&quot; 98] [maelstrom.client$recv_BANG_ invoke &quot;client.clj&quot; 81] [maelstrom.client$send_PLUS_recv_BANG_ invokeStatic &quot;client.clj&quot; 123] [maelstrom.client$send_PLUS_recv_BANG_ invoke &quot;client.clj&quot; 119] [maelstrom.client$rpc_BANG_ invokeStatic &quot;client.clj&quot; 149] [maelstrom.client$rpc_BANG_ invoke &quot;client.clj&quot; 140] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$client$reify__19540 invoke_BANG_ &quot;pn_counter.clj&quot; 50] [jepsen.client.Validate invoke_BANG_ &quot;client.clj&quot; 83] [jepsen.generator.interpreter.ClientWorker invoke_BANG_ &quot;interpreter.clj&quot; 65] [jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909 invoke &quot;interpreter.clj&quot; 140] [jepsen.generator.interpreter$spawn_worker$fn__12908 invoke &quot;interpreter.clj&quot; 123] [clojure.core$binding_conveyor_fn$fn__5823 invoke &quot;core.clj&quot; 2047] [clojure.lang.AFn call &quot;AFn.java&quot; 18] [java.util.concurrent.FutureTask run &quot;FutureTask.java&quot; 317] [java.util.concurrent.ThreadPoolExecutor runWorker &quot;ThreadPoolExecutor.java&quot; 1144] [java.util.concurrent.ThreadPoolExecutor$Worker run &quot;ThreadPoolExecutor.java&quot; 642] [java.lang.Thread run &quot;Thread.java&quot; 1583]], :cause &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}}
+ :value }">3 read </div></a><a href="#i23"><div class="op info" id="i23" style="width:100;left:530;top:192;height:784" title="Dur: 5005 ms
+Err: &quot;indeterminate: Client read timeout&quot;
+Wall-clock Time: 2024-02-27T21:31:23.478Z
+
+Op:
+{:process 4
+ :type :info
+ :f :read
+ :index 23
+ :error &quot;indeterminate: Client read timeout&quot;
+ :exception {:via [{:type clojure.lang.ExceptionInfo, :message &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}, :at [slingshot.support$stack_trace invoke &quot;support.clj&quot; 201]}], :trace [[slingshot.support$stack_trace invoke &quot;support.clj&quot; 201] [maelstrom.client$recv_BANG_ invokeStatic &quot;client.clj&quot; 98] [maelstrom.client$recv_BANG_ invoke &quot;client.clj&quot; 81] [maelstrom.client$send_PLUS_recv_BANG_ invokeStatic &quot;client.clj&quot; 123] [maelstrom.client$send_PLUS_recv_BANG_ invoke &quot;client.clj&quot; 119] [maelstrom.client$rpc_BANG_ invokeStatic &quot;client.clj&quot; 149] [maelstrom.client$rpc_BANG_ invoke &quot;client.clj&quot; 140] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$client$reify__19540 invoke_BANG_ &quot;pn_counter.clj&quot; 50] [jepsen.client.Validate invoke_BANG_ &quot;client.clj&quot; 83] [jepsen.generator.interpreter.ClientWorker invoke_BANG_ &quot;interpreter.clj&quot; 65] [jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909 invoke &quot;interpreter.clj&quot; 140] [jepsen.generator.interpreter$spawn_worker$fn__12908 invoke &quot;interpreter.clj&quot; 123] [clojure.core$binding_conveyor_fn$fn__5823 invoke &quot;core.clj&quot; 2047] [clojure.lang.AFn call &quot;AFn.java&quot; 18] [java.util.concurrent.FutureTask run &quot;FutureTask.java&quot; 317] [java.util.concurrent.ThreadPoolExecutor runWorker &quot;ThreadPoolExecutor.java&quot; 1144] [java.util.concurrent.ThreadPoolExecutor$Worker run &quot;ThreadPoolExecutor.java&quot; 642] [java.lang.Thread run &quot;Thread.java&quot; 1583]], :cause &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}}
+ :value }">4 read </div></a><a href="#i25"><div class="op ok" id="i25" style="width:100;left:318;top:320;height:80" title="Dur: 2003 ms
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:23.505Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 25
+ :value 2}">2 read <br />2</div></a><a href="#i27"><div class="op ok" id="i27" style="width:100;left:318;top:416;height:16" title="Dur: 2 ms
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:23.507Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :add
+ :index 27
+ :value 3}">2 add 3</div></a><a href="#i29"><div class="op ok" id="i29" style="width:100;left:318;top:448;height:16" title="Dur: 3 ms
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:23.515Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :add
+ :index 29
+ :value 0}">2 add 0</div></a><a href="#i31"><div class="op ok" id="i31" style="width:100;left:318;top:480;height:16" title="Dur: 2003 ms
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:25.527Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 31
+ :value 5}">2 read <br />5</div></a><a href="#i33"><div class="op ok" id="i33" style="width:100;left:318;top:512;height:16" title="Dur: 2003 ms
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:27.531Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 33
+ :value 5}">2 read <br />5</div></a><a href="#i35"><div class="op info" id="i35" style="width:100;left:636;top:352;height:624" title="Dur: 5005 ms
+Err: &quot;indeterminate: Client read timeout&quot;
+Wall-clock Time: 2024-02-27T21:31:28.475Z
+
+Op:
+{:process 6
+ :type :info
+ :f :read
+ :index 35
+ :error &quot;indeterminate: Client read timeout&quot;
+ :exception {:via [{:type clojure.lang.ExceptionInfo, :message &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}, :at [slingshot.support$stack_trace invoke &quot;support.clj&quot; 201]}], :trace [[slingshot.support$stack_trace invoke &quot;support.clj&quot; 201] [maelstrom.client$recv_BANG_ invokeStatic &quot;client.clj&quot; 98] [maelstrom.client$recv_BANG_ invoke &quot;client.clj&quot; 81] [maelstrom.client$send_PLUS_recv_BANG_ invokeStatic &quot;client.clj&quot; 123] [maelstrom.client$send_PLUS_recv_BANG_ invoke &quot;client.clj&quot; 119] [maelstrom.client$rpc_BANG_ invokeStatic &quot;client.clj&quot; 149] [maelstrom.client$rpc_BANG_ invoke &quot;client.clj&quot; 140] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$client$reify__19540 invoke_BANG_ &quot;pn_counter.clj&quot; 50] [jepsen.client.Validate invoke_BANG_ &quot;client.clj&quot; 83] [jepsen.generator.interpreter.ClientWorker invoke_BANG_ &quot;interpreter.clj&quot; 65] [jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909 invoke &quot;interpreter.clj&quot; 140] [jepsen.generator.interpreter$spawn_worker$fn__12908 invoke &quot;interpreter.clj&quot; 123] [clojure.core$binding_conveyor_fn$fn__5823 invoke &quot;core.clj&quot; 2047] [clojure.lang.AFn call &quot;AFn.java&quot; 18] [java.util.concurrent.FutureTask run &quot;FutureTask.java&quot; 317] [java.util.concurrent.ThreadPoolExecutor runWorker &quot;ThreadPoolExecutor.java&quot; 1144] [java.util.concurrent.ThreadPoolExecutor$Worker run &quot;ThreadPoolExecutor.java&quot; 642] [java.lang.Thread run &quot;Thread.java&quot; 1583]], :cause &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}}
+ :value }">6 read </div></a><a href="#i37"><div class="op info" id="i37" style="width:100;left:742;top:384;height:592" title="Dur: 5007 ms
+Err: &quot;indeterminate: Client read timeout&quot;
+Wall-clock Time: 2024-02-27T21:31:28.491Z
+
+Op:
+{:process 7
+ :type :info
+ :f :read
+ :index 37
+ :error &quot;indeterminate: Client read timeout&quot;
+ :exception {:via [{:type clojure.lang.ExceptionInfo, :message &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}, :at [slingshot.support$stack_trace invoke &quot;support.clj&quot; 201]}], :trace [[slingshot.support$stack_trace invoke &quot;support.clj&quot; 201] [maelstrom.client$recv_BANG_ invokeStatic &quot;client.clj&quot; 98] [maelstrom.client$recv_BANG_ invoke &quot;client.clj&quot; 81] [maelstrom.client$send_PLUS_recv_BANG_ invokeStatic &quot;client.clj&quot; 123] [maelstrom.client$send_PLUS_recv_BANG_ invoke &quot;client.clj&quot; 119] [maelstrom.client$rpc_BANG_ invokeStatic &quot;client.clj&quot; 149] [maelstrom.client$rpc_BANG_ invoke &quot;client.clj&quot; 140] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$client$reify__19540 invoke_BANG_ &quot;pn_counter.clj&quot; 50] [jepsen.client.Validate invoke_BANG_ &quot;client.clj&quot; 83] [jepsen.generator.interpreter.ClientWorker invoke_BANG_ &quot;interpreter.clj&quot; 65] [jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909 invoke &quot;interpreter.clj&quot; 140] [jepsen.generator.interpreter$spawn_worker$fn__12908 invoke &quot;interpreter.clj&quot; 123] [clojure.core$binding_conveyor_fn$fn__5823 invoke &quot;core.clj&quot; 2047] [clojure.lang.AFn call &quot;AFn.java&quot; 18] [java.util.concurrent.FutureTask run &quot;FutureTask.java&quot; 317] [java.util.concurrent.ThreadPoolExecutor runWorker &quot;ThreadPoolExecutor.java&quot; 1144] [java.util.concurrent.ThreadPoolExecutor$Worker run &quot;ThreadPoolExecutor.java&quot; 642] [java.lang.Thread run &quot;Thread.java&quot; 1583]], :cause &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}}
+ :value }">7 read </div></a><a href="#i39"><div class="op ok" id="i39" style="width:100;left:318;top:544;height:80" title="Dur: 2002 ms
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:29.534Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 39
+ :value 5}">2 read <br />5</div></a><a href="#i41"><div class="op ok" id="i41" style="width:100;left:318;top:640;height:16" title="Dur: 2 ms
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:29.536Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :add
+ :index 41
+ :value 3}">2 add 3</div></a><a href="#i43"><div class="op ok" id="i43" style="width:100;left:318;top:672;height:16" title="Dur: 2002 ms
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:31.538Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 43
+ :value 8}">2 read <br />8</div></a><a href="#i45"><div class="op ok" id="i45" style="width:100;left:318;top:704;height:16" title="Dur: 2 ms
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:31.540Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :add
+ :index 45
+ :value 2}">2 add 2</div></a><a href="#i47"><div class="op ok" id="i47" style="width:100;left:318;top:736;height:16" title="Dur: 1 ms
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:31.549Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :add
+ :index 47
+ :value 4}">2 add 4</div></a><a href="#i49"><div class="op info" id="i49" style="width:100;left:848;top:576;height:400" title="Dur: 5004 ms
+Err: &quot;indeterminate: Client read timeout&quot;
+Wall-clock Time: 2024-02-27T21:31:33.480Z
+
+Op:
+{:process 9
+ :type :info
+ :f :read
+ :index 49
+ :error &quot;indeterminate: Client read timeout&quot;
+ :exception {:via [{:type clojure.lang.ExceptionInfo, :message &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}, :at [slingshot.support$stack_trace invoke &quot;support.clj&quot; 201]}], :trace [[slingshot.support$stack_trace invoke &quot;support.clj&quot; 201] [maelstrom.client$recv_BANG_ invokeStatic &quot;client.clj&quot; 98] [maelstrom.client$recv_BANG_ invoke &quot;client.clj&quot; 81] [maelstrom.client$send_PLUS_recv_BANG_ invokeStatic &quot;client.clj&quot; 123] [maelstrom.client$send_PLUS_recv_BANG_ invoke &quot;client.clj&quot; 119] [maelstrom.client$rpc_BANG_ invokeStatic &quot;client.clj&quot; 149] [maelstrom.client$rpc_BANG_ invoke &quot;client.clj&quot; 140] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$client$reify__19540 invoke_BANG_ &quot;pn_counter.clj&quot; 50] [jepsen.client.Validate invoke_BANG_ &quot;client.clj&quot; 83] [jepsen.generator.interpreter.ClientWorker invoke_BANG_ &quot;interpreter.clj&quot; 65] [jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909 invoke &quot;interpreter.clj&quot; 140] [jepsen.generator.interpreter$spawn_worker$fn__12908 invoke &quot;interpreter.clj&quot; 123] [clojure.core$binding_conveyor_fn$fn__5823 invoke &quot;core.clj&quot; 2047] [clojure.lang.AFn call &quot;AFn.java&quot; 18] [java.util.concurrent.FutureTask run &quot;FutureTask.java&quot; 317] [java.util.concurrent.ThreadPoolExecutor runWorker &quot;ThreadPoolExecutor.java&quot; 1144] [java.util.concurrent.ThreadPoolExecutor$Worker run &quot;ThreadPoolExecutor.java&quot; 642] [java.lang.Thread run &quot;Thread.java&quot; 1583]], :cause &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}}
+ :value }">9 read </div></a><a href="#i50"><div class="op info" id="i50" style="width:100;left:954;top:608;height:368" title="Dur: 5003 ms
+Err: &quot;indeterminate: Client read timeout&quot;
+Wall-clock Time: 2024-02-27T21:31:33.497Z
+
+Op:
+{:process 10
+ :type :info
+ :f :read
+ :index 50
+ :error &quot;indeterminate: Client read timeout&quot;
+ :exception {:via [{:type clojure.lang.ExceptionInfo, :message &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}, :at [slingshot.support$stack_trace invoke &quot;support.clj&quot; 201]}], :trace [[slingshot.support$stack_trace invoke &quot;support.clj&quot; 201] [maelstrom.client$recv_BANG_ invokeStatic &quot;client.clj&quot; 98] [maelstrom.client$recv_BANG_ invoke &quot;client.clj&quot; 81] [maelstrom.client$send_PLUS_recv_BANG_ invokeStatic &quot;client.clj&quot; 123] [maelstrom.client$send_PLUS_recv_BANG_ invoke &quot;client.clj&quot; 119] [maelstrom.client$rpc_BANG_ invokeStatic &quot;client.clj&quot; 149] [maelstrom.client$rpc_BANG_ invoke &quot;client.clj&quot; 140] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$client$reify__19540 invoke_BANG_ &quot;pn_counter.clj&quot; 50] [jepsen.client.Validate invoke_BANG_ &quot;client.clj&quot; 83] [jepsen.generator.interpreter.ClientWorker invoke_BANG_ &quot;interpreter.clj&quot; 65] [jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909 invoke &quot;interpreter.clj&quot; 140] [jepsen.generator.interpreter$spawn_worker$fn__12908 invoke &quot;interpreter.clj&quot; 123] [clojure.core$binding_conveyor_fn$fn__5823 invoke &quot;core.clj&quot; 2047] [clojure.lang.AFn call &quot;AFn.java&quot; 18] [java.util.concurrent.FutureTask run &quot;FutureTask.java&quot; 317] [java.util.concurrent.ThreadPoolExecutor runWorker &quot;ThreadPoolExecutor.java&quot; 1144] [java.util.concurrent.ThreadPoolExecutor$Worker run &quot;ThreadPoolExecutor.java&quot; 642] [java.lang.Thread run &quot;Thread.java&quot; 1583]], :cause &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}}
+ :value }">10 read </div></a><a href="#i51"><div class="op ok" id="i51" style="width:100;left:318;top:768;height:48" title="Dur: 2002 ms
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:33.561Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 51
+ :value 14}">2 read <br />14</div></a><a href="#i52"><div class="op info" id="i52" style="width:100;left:0;top:832;height:16" title="Msg: nil
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:33.561Z
+
+Op:
+{:process :nemesis
+ :type :info
+ :f :stop-partition
+ :index 52
+ :value }">:nemesis stop-partition </div></a><a href="#i53"><div class="op info" id="i53" style="width:100;left:0;top:848;height:16" title="Msg: :network-healed
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:33.561Z
+
+Op:
+{:process :nemesis
+ :type :info
+ :f :stop-partition
+ :index 53
+ :value :network-healed}">:nemesis stop-partition <br /></div></a><a href="#i57"><div class="op ok" id="i57" style="width:100;left:318;top:880;height:32" title="Dur: 2003 ms
+Err: nil
+Wall-clock Time: 2024-02-27T21:31:45.571Z
+
+Op:
+{:process 2
+ :type :ok
+ :f :read
+ :index 57
+ :final? true
+ :value 14}">2 read <br />14</div></a><a href="#i58"><div class="op info" id="i58" style="width:100;left:1166;top:864;height:112" title="Dur: 5007 ms
+Err: &quot;indeterminate: Client read timeout&quot;
+Wall-clock Time: 2024-02-27T21:31:48.572Z
+
+Op:
+{:process 13
+ :type :info
+ :f :read
+ :index 58
+ :final? true
+ :error &quot;indeterminate: Client read timeout&quot;
+ :exception {:via [{:type clojure.lang.ExceptionInfo, :message &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}, :at [slingshot.support$stack_trace invoke &quot;support.clj&quot; 201]}], :trace [[slingshot.support$stack_trace invoke &quot;support.clj&quot; 201] [maelstrom.client$recv_BANG_ invokeStatic &quot;client.clj&quot; 98] [maelstrom.client$recv_BANG_ invoke &quot;client.clj&quot; 81] [maelstrom.client$send_PLUS_recv_BANG_ invokeStatic &quot;client.clj&quot; 123] [maelstrom.client$send_PLUS_recv_BANG_ invoke &quot;client.clj&quot; 119] [maelstrom.client$rpc_BANG_ invokeStatic &quot;client.clj&quot; 149] [maelstrom.client$rpc_BANG_ invoke &quot;client.clj&quot; 140] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$client$reify__19540 invoke_BANG_ &quot;pn_counter.clj&quot; 50] [jepsen.client.Validate invoke_BANG_ &quot;client.clj&quot; 83] [jepsen.generator.interpreter.ClientWorker invoke_BANG_ &quot;interpreter.clj&quot; 65] [jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909 invoke &quot;interpreter.clj&quot; 140] [jepsen.generator.interpreter$spawn_worker$fn__12908 invoke &quot;interpreter.clj&quot; 123] [clojure.core$binding_conveyor_fn$fn__5823 invoke &quot;core.clj&quot; 2047] [clojure.lang.AFn call &quot;AFn.java&quot; 18] [java.util.concurrent.FutureTask run &quot;FutureTask.java&quot; 317] [java.util.concurrent.ThreadPoolExecutor runWorker &quot;ThreadPoolExecutor.java&quot; 1144] [java.util.concurrent.ThreadPoolExecutor$Worker run &quot;ThreadPoolExecutor.java&quot; 642] [java.lang.Thread run &quot;Thread.java&quot; 1583]], :cause &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}}
+ :value }">13 read </div></a><a href="#i59"><div class="op info" id="i59" style="width:100;left:1060;top:896;height:80" title="Dur: 5005 ms
+Err: &quot;indeterminate: Client read timeout&quot;
+Wall-clock Time: 2024-02-27T21:31:48.572Z
+
+Op:
+{:process 12
+ :type :info
+ :f :read
+ :index 59
+ :final? true
+ :error &quot;indeterminate: Client read timeout&quot;
+ :exception {:via [{:type clojure.lang.ExceptionInfo, :message &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}, :at [slingshot.support$stack_trace invoke &quot;support.clj&quot; 201]}], :trace [[slingshot.support$stack_trace invoke &quot;support.clj&quot; 201] [maelstrom.client$recv_BANG_ invokeStatic &quot;client.clj&quot; 98] [maelstrom.client$recv_BANG_ invoke &quot;client.clj&quot; 81] [maelstrom.client$send_PLUS_recv_BANG_ invokeStatic &quot;client.clj&quot; 123] [maelstrom.client$send_PLUS_recv_BANG_ invoke &quot;client.clj&quot; 119] [maelstrom.client$rpc_BANG_ invokeStatic &quot;client.clj&quot; 149] [maelstrom.client$rpc_BANG_ invoke &quot;client.clj&quot; 140] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$fn__19529$read__19530 invoke &quot;pn_counter.clj&quot; 27] [maelstrom.workload.pn_counter$client$reify__19540 invoke_BANG_ &quot;pn_counter.clj&quot; 50] [jepsen.client.Validate invoke_BANG_ &quot;client.clj&quot; 83] [jepsen.generator.interpreter.ClientWorker invoke_BANG_ &quot;interpreter.clj&quot; 65] [jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909 invoke &quot;interpreter.clj&quot; 140] [jepsen.generator.interpreter$spawn_worker$fn__12908 invoke &quot;interpreter.clj&quot; 123] [clojure.core$binding_conveyor_fn$fn__5823 invoke &quot;core.clj&quot; 2047] [clojure.lang.AFn call &quot;AFn.java&quot; 18] [java.util.concurrent.FutureTask run &quot;FutureTask.java&quot; 317] [java.util.concurrent.ThreadPoolExecutor runWorker &quot;ThreadPoolExecutor.java&quot; 1144] [java.util.concurrent.ThreadPoolExecutor$Worker run &quot;ThreadPoolExecutor.java&quot; 642] [java.lang.Thread run &quot;Thread.java&quot; 1583]], :cause &quot;Client read timeout&quot;, :data {:type :maelstrom.client/timeout, :name :timeout, :definite? false, :code 0}}
+ :value }">12 read </div></a></div></body></html>

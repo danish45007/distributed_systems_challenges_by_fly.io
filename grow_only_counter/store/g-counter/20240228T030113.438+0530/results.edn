@@ -1,0 +1,140 @@
+{:perf {:latency-graph {:valid? true},
+        :rate-graph {:valid? true},
+        :valid? true},
+ :timeline {:valid? true},
+ :exceptions {:valid? true,
+              :exceptions ({:count 10,
+                            :class clojure.lang.ExceptionInfo,
+                            :example #jepsen.history.Op{:index 9,
+                                                        :time 5027264188,
+                                                        :type :info,
+                                                        :process 0,
+                                                        :f :read,
+                                                        :value nil,
+                                                        :exception {:via [{:type clojure.lang.ExceptionInfo,
+                                                                           :message "Client read timeout",
+                                                                           :data {:type :maelstrom.client/timeout,
+                                                                                  :name :timeout,
+                                                                                  :definite? false,
+                                                                                  :code 0},
+                                                                           :at [slingshot.support$stack_trace
+                                                                                invoke
+                                                                                "support.clj"
+                                                                                201]}],
+                                                                    :trace [[slingshot.support$stack_trace
+                                                                             invoke
+                                                                             "support.clj"
+                                                                             201]
+                                                                            [maelstrom.client$recv_BANG_
+                                                                             invokeStatic
+                                                                             "client.clj"
+                                                                             98]
+                                                                            [maelstrom.client$recv_BANG_
+                                                                             invoke
+                                                                             "client.clj"
+                                                                             81]
+                                                                            [maelstrom.client$send_PLUS_recv_BANG_
+                                                                             invokeStatic
+                                                                             "client.clj"
+                                                                             123]
+                                                                            [maelstrom.client$send_PLUS_recv_BANG_
+                                                                             invoke
+                                                                             "client.clj"
+                                                                             119]
+                                                                            [maelstrom.client$rpc_BANG_
+                                                                             invokeStatic
+                                                                             "client.clj"
+                                                                             149]
+                                                                            [maelstrom.client$rpc_BANG_
+                                                                             invoke
+                                                                             "client.clj"
+                                                                             140]
+                                                                            [maelstrom.workload.pn_counter$fn__19529$read__19530
+                                                                             invoke
+                                                                             "pn_counter.clj"
+                                                                             27]
+                                                                            [maelstrom.workload.pn_counter$fn__19529$read__19530
+                                                                             invoke
+                                                                             "pn_counter.clj"
+                                                                             27]
+                                                                            [maelstrom.workload.pn_counter$client$reify__19540
+                                                                             invoke_BANG_
+                                                                             "pn_counter.clj"
+                                                                             50]
+                                                                            [jepsen.client.Validate
+                                                                             invoke_BANG_
+                                                                             "client.clj"
+                                                                             83]
+                                                                            [jepsen.generator.interpreter.ClientWorker
+                                                                             invoke_BANG_
+                                                                             "interpreter.clj"
+                                                                             65]
+                                                                            [jepsen.generator.interpreter$spawn_worker$fn__12908$fn__12909
+                                                                             invoke
+                                                                             "interpreter.clj"
+                                                                             140]
+                                                                            [jepsen.generator.interpreter$spawn_worker$fn__12908
+                                                                             invoke
+                                                                             "interpreter.clj"
+                                                                             123]
+                                                                            [clojure.core$binding_conveyor_fn$fn__5823
+                                                                             invoke
+                                                                             "core.clj"
+                                                                             2047]
+                                                                            [clojure.lang.AFn
+                                                                             call
+                                                                             "AFn.java"
+                                                                             18]
+                                                                            [java.util.concurrent.FutureTask
+                                                                             run
+                                                                             "FutureTask.java"
+                                                                             317]
+                                                                            [java.util.concurrent.ThreadPoolExecutor
+                                                                             runWorker
+                                                                             "ThreadPoolExecutor.java"
+                                                                             1144]
+                                                                            [java.util.concurrent.ThreadPoolExecutor$Worker
+                                                                             run
+                                                                             "ThreadPoolExecutor.java"
+                                                                             642]
+                                                                            [java.lang.Thread
+                                                                             run
+                                                                             "Thread.java"
+                                                                             1583]],
+                                                                    :cause "Client read timeout",
+                                                                    :data {:type :maelstrom.client/timeout,
+                                                                           :name :timeout,
+                                                                           :definite? false,
+                                                                           :code 0}},
+                                                        :error "indeterminate: Client read timeout"}})},
+ :stats {:valid? true,
+         :count 27,
+         :ok-count 17,
+         :fail-count 0,
+         :info-count 10,
+         :by-f {:add {:valid? true,
+                      :count 6,
+                      :ok-count 6,
+                      :fail-count 0,
+                      :info-count 0},
+                :read {:valid? true,
+                       :count 21,
+                       :ok-count 11,
+                       :fail-count 0,
+                       :info-count 10}}},
+ :availability {:valid? true, :ok-fraction 0.6296296},
+ :net {:all {:send-count 130,
+             :recv-count 125,
+             :msg-count 130,
+             :msgs-per-op 4.814815},
+       :clients {:send-count 50, :recv-count 50, :msg-count 50},
+       :servers {:send-count 80,
+                 :recv-count 75,
+                 :msg-count 80,
+                 :msgs-per-op 2.9629629},
+       :valid? true},
+ :workload {:valid? true,
+            :errors nil,
+            :final-reads (14),
+            :acceptable ([14 14])},
+ :valid? true}

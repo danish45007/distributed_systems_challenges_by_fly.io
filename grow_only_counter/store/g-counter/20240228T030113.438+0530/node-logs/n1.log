@@ -1,0 +1,86 @@
+2024/02/28 03:01:16 Received {c0 n1 {"type":"init","node_id":"n1","node_ids":["n0","n1","n2"],"msg_id":1}}
+2024/02/28 03:01:16 Sent {"src":"n1","dest":"seq-kv","body":{"key":"n1","msg_id":1,"type":"write","value":0}}
+2024/02/28 03:01:16 Received {seq-kv n1 {"type":"write_ok","in_reply_to":1}}
+2024/02/28 03:01:16 Node n1 initialized
+2024/02/28 03:01:16 Sent {"src":"n1","dest":"c0","body":{"in_reply_to":1,"type":"init_ok"}}
+2024/02/28 03:01:16 Received {c6 n1 {"type":"read","msg_id":1}}
+2024/02/28 03:01:16 Sent {"src":"n1","dest":"n0","body":{"msg_id":2,"type":"local"}}
+2024/02/28 03:01:17 Sent {"src":"n1","dest":"seq-kv","body":{"key":"n1","msg_id":3,"type":"read"}}
+2024/02/28 03:01:17 Received {seq-kv n1 {"type":"read_ok","value":0,"in_reply_to":3}}
+2024/02/28 03:01:17 Sent {"src":"n1","dest":"n2","body":{"msg_id":4,"type":"local"}}
+2024/02/28 03:01:17 Received {n2 n1 {"msg_id":3,"type":"local"}}
+2024/02/28 03:01:17 Sent {"src":"n1","dest":"seq-kv","body":{"key":"n1","msg_id":5,"type":"read"}}
+2024/02/28 03:01:18 Sent {"src":"n1","dest":"c6","body":{"in_reply_to":1,"type":"read_ok","value":0}}
+2024/02/28 03:01:18 Exception handling maelstrom.Message{Src:"n2", Dest:"n1", Body:json.RawMessage{0x7b, 0x22, 0x6d, 0x73, 0x67, 0x5f, 0x69, 0x64, 0x22, 0x3a, 0x33, 0x2c, 0x22, 0x74, 0x79, 0x70, 0x65, 0x22, 0x3a, 0x22, 0x6c, 0x6f, 0x63, 0x61, 0x6c, 0x22, 0x7d}}:
+context deadline exceeded
+2024/02/28 03:01:18 Sent {"src":"n1","dest":"n2","body":{"code":13,"in_reply_to":3,"text":"context deadline exceeded","type":"error"}}
+2024/02/28 03:01:19 Received {n2 n1 {"msg_id":6,"type":"local"}}
+2024/02/28 03:01:19 Sent {"src":"n1","dest":"seq-kv","body":{"key":"n1","msg_id":6,"type":"read"}}
+2024/02/28 03:01:20 Exception handling maelstrom.Message{Src:"n2", Dest:"n1", Body:json.RawMessage{0x7b, 0x22, 0x6d, 0x73, 0x67, 0x5f, 0x69, 0x64, 0x22, 0x3a, 0x36, 0x2c, 0x22, 0x74, 0x79, 0x70, 0x65, 0x22, 0x3a, 0x22, 0x6c, 0x6f, 0x63, 0x61, 0x6c, 0x22, 0x7d}}:
+context deadline exceeded
+2024/02/28 03:01:20 Sent {"src":"n1","dest":"n2","body":{"code":13,"in_reply_to":6,"text":"context deadline exceeded","type":"error"}}
+2024/02/28 03:01:21 Received {c10 n1 {"type":"read","msg_id":1}}
+2024/02/28 03:01:21 Sent {"src":"n1","dest":"n0","body":{"msg_id":7,"type":"local"}}
+2024/02/28 03:01:21 Received {n2 n1 {"msg_id":9,"type":"local"}}
+2024/02/28 03:01:21 Sent {"src":"n1","dest":"seq-kv","body":{"key":"n1","msg_id":8,"type":"read"}}
+2024/02/28 03:01:22 Sent {"src":"n1","dest":"seq-kv","body":{"key":"n1","msg_id":9,"type":"read"}}
+2024/02/28 03:01:22 Exception handling maelstrom.Message{Src:"n2", Dest:"n1", Body:json.RawMessage{0x7b, 0x22, 0x6d, 0x73, 0x67, 0x5f, 0x69, 0x64, 0x22, 0x3a, 0x39, 0x2c, 0x22, 0x74, 0x79, 0x70, 0x65, 0x22, 0x3a, 0x22, 0x6c, 0x6f, 0x63, 0x61, 0x6c, 0x22, 0x7d}}:
+context deadline exceeded
+2024/02/28 03:01:22 Sent {"src":"n1","dest":"n2","body":{"code":13,"in_reply_to":9,"text":"context deadline exceeded","type":"error"}}
+2024/02/28 03:01:23 Sent {"src":"n1","dest":"n2","body":{"msg_id":10,"type":"local"}}
+2024/02/28 03:01:23 Received {n2 n1 {"msg_id":14,"type":"local"}}
+2024/02/28 03:01:23 Sent {"src":"n1","dest":"seq-kv","body":{"key":"n1","msg_id":11,"type":"read"}}
+2024/02/28 03:01:24 Sent {"src":"n1","dest":"c10","body":{"in_reply_to":1,"type":"read_ok","value":0}}
+2024/02/28 03:01:24 Exception handling maelstrom.Message{Src:"n2", Dest:"n1", Body:json.RawMessage{0x7b, 0x22, 0x6d, 0x73, 0x67, 0x5f, 0x69, 0x64, 0x22, 0x3a, 0x31, 0x34, 0x2c, 0x22, 0x74, 0x79, 0x70, 0x65, 0x22, 0x3a, 0x22, 0x6c, 0x6f, 0x63, 0x61, 0x6c, 0x22, 0x7d}}:
+context deadline exceeded
+2024/02/28 03:01:24 Sent {"src":"n1","dest":"n2","body":{"code":13,"in_reply_to":14,"text":"context deadline exceeded","type":"error"}}
+2024/02/28 03:01:25 Received {n2 n1 {"msg_id":17,"type":"local"}}
+2024/02/28 03:01:25 Sent {"src":"n1","dest":"seq-kv","body":{"key":"n1","msg_id":12,"type":"read"}}
+2024/02/28 03:01:26 Received {c12 n1 {"type":"read","msg_id":1}}
+2024/02/28 03:01:26 Sent {"src":"n1","dest":"n0","body":{"msg_id":13,"type":"local"}}
+2024/02/28 03:01:26 Exception handling maelstrom.Message{Src:"n2", Dest:"n1", Body:json.RawMessage{0x7b, 0x22, 0x6d, 0x73, 0x67, 0x5f, 0x69, 0x64, 0x22, 0x3a, 0x31, 0x37, 0x2c, 0x22, 0x74, 0x79, 0x70, 0x65, 0x22, 0x3a, 0x22, 0x6c, 0x6f, 0x63, 0x61, 0x6c, 0x22, 0x7d}}:
+context deadline exceeded
+2024/02/28 03:01:26 Sent {"src":"n1","dest":"n2","body":{"code":13,"in_reply_to":17,"text":"context deadline exceeded","type":"error"}}
+2024/02/28 03:01:27 Sent {"src":"n1","dest":"seq-kv","body":{"key":"n1","msg_id":14,"type":"read"}}
+2024/02/28 03:01:27 Received {n2 n1 {"msg_id":24,"type":"local"}}
+2024/02/28 03:01:27 Sent {"src":"n1","dest":"seq-kv","body":{"key":"n1","msg_id":15,"type":"read"}}
+2024/02/28 03:01:28 Sent {"src":"n1","dest":"n2","body":{"msg_id":16,"type":"local"}}
+2024/02/28 03:01:28 Exception handling maelstrom.Message{Src:"n2", Dest:"n1", Body:json.RawMessage{0x7b, 0x22, 0x6d, 0x73, 0x67, 0x5f, 0x69, 0x64, 0x22, 0x3a, 0x32, 0x34, 0x2c, 0x22, 0x74, 0x79, 0x70, 0x65, 0x22, 0x3a, 0x22, 0x6c, 0x6f, 0x63, 0x61, 0x6c, 0x22, 0x7d}}:
+context deadline exceeded
+2024/02/28 03:01:28 Sent {"src":"n1","dest":"n2","body":{"code":13,"in_reply_to":24,"text":"context deadline exceeded","type":"error"}}
+2024/02/28 03:01:29 Sent {"src":"n1","dest":"c12","body":{"in_reply_to":1,"type":"read_ok","value":0}}
+2024/02/28 03:01:29 Received {n2 n1 {"msg_id":27,"type":"local"}}
+2024/02/28 03:01:29 Sent {"src":"n1","dest":"seq-kv","body":{"key":"n1","msg_id":17,"type":"read"}}
+2024/02/28 03:01:30 Exception handling maelstrom.Message{Src:"n2", Dest:"n1", Body:json.RawMessage{0x7b, 0x22, 0x6d, 0x73, 0x67, 0x5f, 0x69, 0x64, 0x22, 0x3a, 0x32, 0x37, 0x2c, 0x22, 0x74, 0x79, 0x70, 0x65, 0x22, 0x3a, 0x22, 0x6c, 0x6f, 0x63, 0x61, 0x6c, 0x22, 0x7d}}:
+context deadline exceeded
+2024/02/28 03:01:30 Sent {"src":"n1","dest":"n2","body":{"code":13,"in_reply_to":27,"text":"context deadline exceeded","type":"error"}}
+2024/02/28 03:01:31 Received {c14 n1 {"type":"read","msg_id":1}}
+2024/02/28 03:01:31 Sent {"src":"n1","dest":"n0","body":{"msg_id":18,"type":"local"}}
+2024/02/28 03:01:31 Received {n2 n1 {"msg_id":30,"type":"local"}}
+2024/02/28 03:01:31 Sent {"src":"n1","dest":"seq-kv","body":{"key":"n1","msg_id":19,"type":"read"}}
+2024/02/28 03:01:32 Sent {"src":"n1","dest":"seq-kv","body":{"key":"n1","msg_id":20,"type":"read"}}
+2024/02/28 03:01:32 Exception handling maelstrom.Message{Src:"n2", Dest:"n1", Body:json.RawMessage{0x7b, 0x22, 0x6d, 0x73, 0x67, 0x5f, 0x69, 0x64, 0x22, 0x3a, 0x33, 0x30, 0x2c, 0x22, 0x74, 0x79, 0x70, 0x65, 0x22, 0x3a, 0x22, 0x6c, 0x6f, 0x63, 0x61, 0x6c, 0x22, 0x7d}}:
+context deadline exceeded
+2024/02/28 03:01:32 Sent {"src":"n1","dest":"n2","body":{"code":13,"in_reply_to":30,"text":"context deadline exceeded","type":"error"}}
+2024/02/28 03:01:33 Sent {"src":"n1","dest":"n2","body":{"msg_id":21,"type":"local"}}
+2024/02/28 03:01:33 Received {n2 n1 {"msg_id":35,"type":"local"}}
+2024/02/28 03:01:33 Sent {"src":"n1","dest":"seq-kv","body":{"key":"n1","msg_id":22,"type":"read"}}
+2024/02/28 03:01:34 Sent {"src":"n1","dest":"c14","body":{"in_reply_to":1,"type":"read_ok","value":0}}
+2024/02/28 03:01:34 Exception handling maelstrom.Message{Src:"n2", Dest:"n1", Body:json.RawMessage{0x7b, 0x22, 0x6d, 0x73, 0x67, 0x5f, 0x69, 0x64, 0x22, 0x3a, 0x33, 0x35, 0x2c, 0x22, 0x74, 0x79, 0x70, 0x65, 0x22, 0x3a, 0x22, 0x6c, 0x6f, 0x63, 0x61, 0x6c, 0x22, 0x7d}}:
+context deadline exceeded
+2024/02/28 03:01:34 Sent {"src":"n1","dest":"n2","body":{"code":13,"in_reply_to":35,"text":"context deadline exceeded","type":"error"}}
+2024/02/28 03:01:35 Received {n2 n1 {"msg_id":42,"type":"local"}}
+2024/02/28 03:01:35 Sent {"src":"n1","dest":"seq-kv","body":{"key":"n1","msg_id":23,"type":"read"}}
+2024/02/28 03:01:36 Exception handling maelstrom.Message{Src:"n2", Dest:"n1", Body:json.RawMessage{0x7b, 0x22, 0x6d, 0x73, 0x67, 0x5f, 0x69, 0x64, 0x22, 0x3a, 0x34, 0x32, 0x2c, 0x22, 0x74, 0x79, 0x70, 0x65, 0x22, 0x3a, 0x22, 0x6c, 0x6f, 0x63, 0x61, 0x6c, 0x22, 0x7d}}:
+context deadline exceeded
+2024/02/28 03:01:36 Sent {"src":"n1","dest":"n2","body":{"code":13,"in_reply_to":42,"text":"context deadline exceeded","type":"error"}}
+2024/02/28 03:01:46 Received {c15 n1 {"type":"read","msg_id":1}}
+2024/02/28 03:01:46 Sent {"src":"n1","dest":"n0","body":{"msg_id":24,"type":"local"}}
+2024/02/28 03:01:47 Sent {"src":"n1","dest":"seq-kv","body":{"key":"n1","msg_id":25,"type":"read"}}
+2024/02/28 03:01:47 Received {n2 n1 {"msg_id":45,"type":"local"}}
+2024/02/28 03:01:47 Sent {"src":"n1","dest":"seq-kv","body":{"key":"n1","msg_id":26,"type":"read"}}
+2024/02/28 03:01:48 Sent {"src":"n1","dest":"n2","body":{"msg_id":27,"type":"local"}}
+2024/02/28 03:01:48 Exception handling maelstrom.Message{Src:"n2", Dest:"n1", Body:json.RawMessage{0x7b, 0x22, 0x6d, 0x73, 0x67, 0x5f, 0x69, 0x64, 0x22, 0x3a, 0x34, 0x35, 0x2c, 0x22, 0x74, 0x79, 0x70, 0x65, 0x22, 0x3a, 0x22, 0x6c, 0x6f, 0x63, 0x61, 0x6c, 0x22, 0x7d}}:
+context deadline exceeded
+2024/02/28 03:01:48 Sent {"src":"n1","dest":"n2","body":{"code":13,"in_reply_to":45,"text":"context deadline exceeded","type":"error"}}
+2024/02/28 03:01:49 Sent {"src":"n1","dest":"c15","body":{"in_reply_to":1,"type":"read_ok","value":0}}
