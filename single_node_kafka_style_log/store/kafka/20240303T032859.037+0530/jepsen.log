@@ -1,0 +1,341 @@
+2024-03-03 03:28:59,821{GMT}	INFO	[jepsen test runner] jepsen.core: Test version e2e080b710c3c01ab0bafb937986a484d53299ee (plus uncommitted changes)
+2024-03-03 03:28:59,822{GMT}	INFO	[jepsen test runner] jepsen.core: Command line:
+lein run test -w kafka --bin /Users/danishsharma/go/src/gossip-glamers/single_node_kafka_style_log/bin --node-count 1 --concurrency 2n --time-limit 20 --rate 1000
+2024-03-03 03:28:59,951{GMT}	INFO	[jepsen test runner] jepsen.core: Running test:
+{:args []
+ :remote
+ #jepsen.control.retry.Remote{:remote #jepsen.control.scp.Remote{:cmd-remote #jepsen.control.sshj.SSHJRemote{:concurrency-limit 6,
+                                                                                                             :conn-spec nil,
+                                                                                                             :client nil,
+                                                                                                             :semaphore nil},
+                                                                 :conn-spec nil},
+                              :conn nil}
+ :log-net-send false
+ :node-count 1
+ :availability nil
+ :max-txn-length 4
+ :concurrency 2
+ :db
+ #object[maelstrom.db$db$reify__16142
+         "0x29cd48bd"
+         "maelstrom.db$db$reify__16142@29cd48bd"]
+ :max-writes-per-key 16
+ :leave-db-running? false
+ :sub-via #{:assign}
+ :name "kafka"
+ :logging-json? false
+ :start-time
+ #object[org.joda.time.DateTime "0x34d776eb" "2024-03-03T03:28:59.037+05:30"]
+ :nemesis-interval 10
+ :net
+ #object[maelstrom.net$jepsen_net$reify__15251
+         "0x60a3a0fa"
+         "maelstrom.net$jepsen_net$reify__15251@60a3a0fa"]
+ :client
+ #maelstrom.workload.kafka.Client{:net #object[clojure.lang.Atom
+                                               "0x704c3ca2"
+                                               {:status :ready,
+                                                :val {:p-loss 0,
+                                                      :latency-dist #maelstrom.net.ConstantDistribution{:x 0},
+                                                      :journal nil,
+                                                      :log-recv? false,
+                                                      :partitions {},
+                                                      :log-send? false,
+                                                      :next-client-id -1,
+                                                      :next-message-id #object[clojure.lang.Atom
+                                                                               "0x7d3a9061"
+                                                                               {:status :ready,
+                                                                                :val -1}],
+                                                      :queues {}}}],
+                                  :conn nil,
+                                  :node nil,
+                                  :offsets nil}
+ :barrier
+ #object[java.util.concurrent.CyclicBarrier
+         "0x2a2f7a61"
+         "java.util.concurrent.CyclicBarrier@2a2f7a61"]
+ :log-stderr false
+ :pure-generators true
+ :ssh {:dummy? true}
+ :rate 1000.0
+ :txn? false
+ :checker
+ #object[jepsen.checker$compose$reify__11881
+         "0x8d40f07"
+         "jepsen.checker$compose$reify__11881@8d40f07"]
+ :argv
+ ("test"
+  "-w"
+  "kafka"
+  "--bin"
+  "/Users/danishsharma/go/src/gossip-glamers/single_node_kafka_style_log/bin"
+  "--node-count"
+  "1"
+  "--concurrency"
+  "2n"
+  "--time-limit"
+  "20"
+  "--rate"
+  "1000")
+ :nemesis
+ (jepsen.nemesis.ReflCompose
+  {:fm {:start-partition 0,
+        :stop-partition 0,
+        :kill 1,
+        :start 1,
+        :pause 1,
+        :resume 1},
+   :nemeses [#unprintable "jepsen.nemesis.combined$partition_nemesis$reify__16416@196c8b93"
+             #unprintable "jepsen.nemesis.combined$db_nemesis$reify__16397@307ca947"]})
+ :nodes ["n0"]
+ :test-count 1
+ :crash-clients? true
+ :latency {:mean 0, :dist :constant}
+ :bin
+ "/Users/danishsharma/go/src/gossip-glamers/single_node_kafka_style_log/bin"
+ :generator
+ ((jepsen.generator.Synchronize
+   {:gen (jepsen.generator.TimeLimit
+          {:limit 20000000000,
+           :cutoff nil,
+           :gen (jepsen.generator.Any
+                 {:gens [(jepsen.generator.OnThreads
+                          {:f #{:nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                                   "0x65c040c9"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__9167@65c040c9"],
+                           :gen nil})
+                         (jepsen.generator.OnThreads
+                          {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                                   "0x11736ebc"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__9167@11736ebc"],
+                           :gen (jepsen.generator.Stagger
+                                 {:dt 2000000,
+                                  :next-time nil,
+                                  :gen (maelstrom.workload.kafka.StringKeys
+                                        {:gen (jepsen.generator.Any
+                                               {:gens [(jepsen.generator.Stagger
+                                                        {:dt 30000000000,
+                                                         :next-time nil,
+                                                         :gen ({:f :crash}
+                                                               {:f :crash}
+                                                               {:f :crash}
+                                                               {:f :crash}
+                                                               {:f :crash}
+                                                               {:f :crash}
+                                                               {:f :crash}
+                                                               {:f :crash}
+                                                               ...)})
+                                                       (jepsen.tests.kafka.PollUnseen
+                                                        {:gen (jepsen.tests.kafka.InterleaveSubscribes
+                                                               {:gen (jepsen.tests.kafka.TrackKeyOffsets
+                                                                      {:gen (jepsen.generator.Map
+                                                                             {:f #object[jepsen.tests.kafka$tag_rw$tag_rw__18063
+                                                                                         "0x5aad4194"
+                                                                                         "jepsen.tests.kafka$tag_rw$tag_rw__18063@5aad4194"],
+                                                                              :gen (jepsen.generator.Map
+                                                                                    {:f #object[jepsen.tests.kafka$txn_generator$rewrite_op__18027
+                                                                                                "0x50a1c2f3"
+                                                                                                "jepsen.tests.kafka$txn_generator$rewrite_op__18027@50a1c2f3"],
+                                                                                     :gen ({:type :invoke,
+                                                                                            :f :txn,
+                                                                                            :value [[:r
+                                                                                                     9
+                                                                                                     nil]]}
+                                                                                           {:type :invoke,
+                                                                                            :f :txn,
+                                                                                            :value [[:r
+                                                                                                     6
+                                                                                                     nil]]}
+                                                                                           {:type :invoke,
+                                                                                            :f :txn,
+                                                                                            :value [[:r
+                                                                                                     7
+                                                                                                     nil]]}
+                                                                                           {:type :invoke,
+                                                                                            :f :txn,
+                                                                                            :value [[:append
+                                                                                                     9
+                                                                                                     1]]}
+                                                                                           {:type :invoke,
+                                                                                            :f :txn,
+                                                                                            :value [[:append
+                                                                                                     9
+                                                                                                     2]]}
+                                                                                           {:type :invoke,
+                                                                                            :f :txn,
+                                                                                            :value [[:r
+                                                                                                     9
+                                                                                                     nil]]}
+                                                                                           {:type :invoke,
+                                                                                            :f :txn,
+                                                                                            :value [[:r
+                                                                                                     9
+                                                                                                     nil]]}
+                                                                                           {:type :invoke,
+                                                                                            :f :txn,
+                                                                                            :value [[:r
+                                                                                                     9
+                                                                                                     nil]]}
+                                                                                           ...)})}),
+                                                                       :offsets #object[clojure.lang.Atom
+                                                                                        "0x3d0c88f4"
+                                                                                        {:status :ready,
+                                                                                         :val {}}]})}),
+                                                         :sent {},
+                                                         :polled {}})]})})})})]})})})
+  (jepsen.generator.Synchronize
+   {:gen (jepsen.generator.OnThreads
+          {:f #{:nemesis},
+           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                   "0x292237cd"
+                                   "jepsen.generator.context$make_thread_filter$lazy_filter__9167@292237cd"],
+           :gen ()})})
+  (jepsen.generator.Synchronize
+   {:gen {:type :log, :value "Waiting for recovery..."}})
+  (jepsen.generator.Synchronize {:gen {:type :sleep, :value 10}})
+  (jepsen.generator.Synchronize
+   {:gen (jepsen.generator.OnThreads
+          {:f #jepsen.generator.context.AllBut{:element :nemesis},
+           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                   "0x797a5b31"
+                                   "jepsen.generator.context$make_thread_filter$lazy_filter__9167@797a5b31"],
+           :gen (jepsen.generator.TimeLimit
+                 {:limit 10000000000,
+                  :cutoff nil,
+                  :gen (maelstrom.workload.kafka.StringKeys
+                        {:gen (jepsen.generator.Filter
+                               {:f #object[clojure.core$comp$fn__5876
+                                           "0x13d7d1a8"
+                                           "clojure.core$comp$fn__5876@13d7d1a8"],
+                                :gen (jepsen.generator.EachThread
+                                      {:fresh-gen #object[clojure.lang.Delay
+                                                          "0x60035f1e"
+                                                          {:status :pending,
+                                                           :val nil}],
+                                       :context-filters #object[clojure.core$promise$reify__8591
+                                                                "0x5827908c"
+                                                                {:status :pending,
+                                                                 :val nil}],
+                                       :gens {}})})})})})}))
+ :log-net-recv false
+ :os
+ #object[maelstrom.net$jepsen_os$reify__15254
+         "0x279b83ea"
+         "maelstrom.net$jepsen_os$reify__15254@279b83ea"]
+ :time-limit 20
+ :workload :kafka
+ :consistency-models [:strict-serializable]
+ :topology :grid}
+
+2024-03-03 03:29:01,824{GMT}	INFO	[jepsen node n0] maelstrom.net: Starting Maelstrom network
+2024-03-03 03:29:01,825{GMT}	INFO	[jepsen test runner] jepsen.db: Tearing down DB
+2024-03-03 03:29:01,827{GMT}	INFO	[jepsen test runner] jepsen.db: Setting up DB
+2024-03-03 03:29:01,829{GMT}	INFO	[jepsen node n0] maelstrom.service: Starting services: (lin-kv lin-tso lww-kv seq-kv)
+2024-03-03 03:29:01,830{GMT}	INFO	[jepsen node n0] maelstrom.db: Setting up n0
+2024-03-03 03:29:01,831{GMT}	INFO	[jepsen node n0] maelstrom.process: launching /Users/danishsharma/go/src/gossip-glamers/single_node_kafka_style_log/bin []
+2024-03-03 03:29:02,210{GMT}	INFO	[jepsen test runner] jepsen.core: Relative time begins now
+2024-03-03 03:29:02,225{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:crash	nil
+2024-03-03 03:29:02,226{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:poll	[[:poll]]
+2024-03-03 03:29:02,226{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:info	:crash	nil
+2024-03-03 03:29:02,228{GMT}	INFO	[jepsen worker 0] jepsen.util: 2	:invoke	:assign	["6"]
+2024-03-03 03:29:02,231{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:poll	[[:poll {}]]
+2024-03-03 03:29:02,232{GMT}	INFO	[jepsen worker 0] jepsen.util: 2	:ok	:assign	["6"]
+2024-03-03 03:29:02,233{GMT}	INFO	[jepsen worker 0] jepsen.util: 2	:invoke	:poll	[[:poll]]
+2024-03-03 03:29:02,234{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:poll	[[:poll]]
+2024-03-03 03:29:02,235{GMT}	INFO	[jepsen worker 0] jepsen.util: 2	:ok	:poll	[[:poll {}]]
+2024-03-03 03:29:02,236{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:poll	[[:poll {}]]
+2024-03-03 03:29:02,237{GMT}	INFO	[jepsen worker 0] jepsen.util: 2	:invoke	:send	[[:send "9" 1]]
+2024-03-03 03:29:02,238{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:assign	["9"]
+2024-03-03 03:29:07,241{GMT}	INFO	[jepsen worker 0] jepsen.util: 2	:info	:send	[[:send "9" 1]]	:net-timeout
+2024-03-03 03:29:07,242{GMT}	INFO	[jepsen worker 0] jepsen.util: 4	:invoke	:send	[[:send "9" 2]]
+2024-03-03 03:29:07,242{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:fail	:assign	["9"]	:net-timeout
+2024-03-03 03:29:07,242{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:crash	nil
+2024-03-03 03:29:07,242{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:info	:crash	nil
+2024-03-03 03:29:07,243{GMT}	INFO	[jepsen worker 1] jepsen.util: 3	:invoke	:poll	[[:poll]]
+2024-03-03 03:29:12,247{GMT}	INFO	[jepsen worker 0] jepsen.util: 4	:info	:send	[[:send "9" 2]]	:net-timeout
+2024-03-03 03:29:12,247{GMT}	INFO	[jepsen worker 1] jepsen.util: 3	:info	:poll	[[:poll]]	:net-timeout
+2024-03-03 03:29:12,248{GMT}	INFO	[jepsen worker 1] jepsen.util: 5	:invoke	:poll	[[:poll]]
+2024-03-03 03:29:12,248{GMT}	INFO	[jepsen worker 0] jepsen.util: 6	:invoke	:poll	[[:poll]]
+2024-03-03 03:29:17,253{GMT}	INFO	[jepsen worker 1] jepsen.util: 5	:info	:poll	[[:poll]]	:net-timeout
+2024-03-03 03:29:17,253{GMT}	INFO	[jepsen worker 0] jepsen.util: 6	:info	:poll	[[:poll]]	:net-timeout
+2024-03-03 03:29:17,253{GMT}	INFO	[jepsen worker 0] jepsen.util: 8	:invoke	:send	[[:send "9" 3]]
+2024-03-03 03:29:17,256{GMT}	INFO	[jepsen worker 1] jepsen.util: 7	:invoke	:assign	["8"]
+2024-03-03 03:29:22,257{GMT}	INFO	[jepsen worker 0] jepsen.util: 8	:info	:send	[[:send "9" 3]]	:net-timeout
+2024-03-03 03:29:22,260{GMT}	INFO	[jepsen worker 1] jepsen.util: 7	:fail	:assign	["8"]	:net-timeout
+2024-03-03 03:29:22,261{GMT}	INFO	[jepsen worker nemesis] jepsen.generator.interpreter: Waiting for recovery...
+2024-03-03 03:29:32,270{GMT}	INFO	[jepsen test runner] jepsen.tests.kafka: Polling up to offsets {}
+2024-03-03 03:29:32,304{GMT}	INFO	[jepsen test runner] jepsen.core: Run complete, writing
+2024-03-03 03:29:32,454{GMT}	INFO	[jepsen node n0] maelstrom.db: Tearing down n0
+2024-03-03 03:29:33,326{GMT}	INFO	[jepsen node n0] maelstrom.net: Shutting down Maelstrom network
+2024-03-03 03:29:33,328{GMT}	WARN	[jepsen test runner] jepsen.core: Test crashed!
+clojure.lang.ExceptionInfo: Node n0 crashed with exit status 2. Before crashing, it wrote to STDOUT:
+
+{"src":"n0","dest":"c0","body":{"in_reply_to":1,"type":"init_ok"}}
+{"src":"n0","dest":"c3","body":{"in_reply_to":1,"msgs":{},"type":"poll_ok"}}
+{"src":"n0","dest":"c4","body":{"in_reply_to":1,"offsets":{"6":0},"type":"list_committed_offsets_ok"}}
+{"src":"n0","dest":"c4","body":{"in_reply_to":2,"msgs":{},"type":"poll_ok"}}
+{"src":"n0","dest":"c3","body":{"in_reply_to":2,"msgs":{},"type":"poll_ok"}}
+
+And to STDERR:
+
+2024/03/03 03:29:02 Received {c0 n0 {"type":"init","node_id":"n0","node_ids":["n0"],"msg_id":1}}
+2024/03/03 03:29:02 Node n0 initialized
+2024/03/03 03:29:02 Sent {"src":"n0","dest":"c0","body":{"in_reply_to":1,"type":"init_ok"}}
+2024/03/03 03:29:02 Received {c3 n0 {"offsets":{},"type":"poll","msg_id":1}}
+2024/03/03 03:29:02 Sent {"src":"n0","dest":"c3","body":{"in_reply_to":1,"msgs":{},"type":"poll_ok"}}
+2024/03/03 03:29:02 Received {c4 n0 {"keys":["6"],"type":"list_committed_offsets","msg_id":1}}
+2024/03/03 03:29:02 Sent {"src":"n0","dest":"c4","body":{"in_reply_to":1,"offsets":{"6":0},"type":"list_committed_offsets_ok"}}
+2024/03/03 03:29:02 Received {c4 n0 {"offsets":{"6":0},"type":"poll","msg_id":2}}
+2024/03/03 03:29:02 Sent {"src":"n0","dest":"c4","body":{"in_reply_to":2,"msgs":{},"type":"poll_ok"}}
+2024/03/03 03:29:02 Received {c3 n0 {"offsets":{},"type":"poll","msg_id":2}}
+2024/03/03 03:29:02 Sent {"src":"n0","dest":"c3","body":{"in_reply_to":2,"msgs":{},"type":"poll_ok"}}
+2024/03/03 03:29:02 Received {c4 n0 {"key":"9","msg":1,"type":"send","msg_id":3}}
+2024/03/03 03:29:02 Received {c3 n0 {"keys":["9"],"type":"list_committed_offsets","msg_id":3}}
+panic: interface conversion: interface {} is nil, not float64
+
+goroutine 22 [running]:
+main.(*server).sendHandler(0xc0000680a0, {{0xc0000964b0, 0x2}, {0xc0000964b2, 0x2}, {0xc0000b00c0, 0x2c, 0x30}})
+	/Users/danishsharma/go/src/gossip-glamers/single_node_kafka_style_log/main.go:67 +0x449
+main.LogWrapper.func1({{0xc0000964b0, 0x2}, {0xc0000964b2, 0x2}, {0xc0000b00c0, 0x2c, 0x30}})
+	/Users/danishsharma/go/src/gossip-glamers/single_node_kafka_style_log/main.go:15 +0x63
+github.com/jepsen-io/maelstrom/demo/go.(*Node).handleMessage(0x0?, 0x0?, {{0xc0000964b0, 0x2}, {0xc0000964b2, 0x2}, {0xc0000b00c0, 0x2c, 0x30}})
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:151 +0x96
+github.com/jepsen-io/maelstrom/demo/go.(*Node).Run.func2()
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:129 +0x88
+created by github.com/jepsen-io/maelstrom/demo/go.(*Node).Run
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:127 +0x41b
+
+Full STDERR logs are available in /Users/danishsharma/go/src/gossip-glamers/single_node_kafka_style_log/store/kafka/20240303T032859.037+0530/node-logs/n0.log
+	at slingshot.support$stack_trace.invoke(support.clj:201)
+	at maelstrom.process$stop_node_BANG_.invokeStatic(process.clj:239)
+	at maelstrom.process$stop_node_BANG_.invoke(process.clj:217)
+	at maelstrom.db$db$reify__16142.teardown_BANG_(db.clj:75)
+	at jepsen.db$fn__8744$G__8725__8748.invoke(db.clj:12)
+	at jepsen.db$fn__8744$G__8724__8753.invoke(db.clj:12)
+	at clojure.core$partial$fn__5908.invoke(core.clj:2642)
+	at jepsen.control$on_nodes$fn__8599.invoke(control.clj:314)
+	at clojure.lang.AFn.applyToHelper(AFn.java:154)
+	at clojure.lang.AFn.applyTo(AFn.java:144)
+	at clojure.core$apply.invokeStatic(core.clj:667)
+	at clojure.core$with_bindings_STAR_.invokeStatic(core.clj:1990)
+	at clojure.core$with_bindings_STAR_.doInvoke(core.clj:1990)
+	at clojure.lang.RestFn.applyTo(RestFn.java:142)
+	at clojure.core$apply.invokeStatic(core.clj:671)
+	at clojure.core$bound_fn_STAR_$fn__5818.doInvoke(core.clj:2020)
+	at clojure.lang.RestFn.invoke(RestFn.java:408)
+	at dom_top.core$real_pmap_helper$build_thread__211$fn__212.invoke(core.clj:163)
+	at clojure.lang.AFn.applyToHelper(AFn.java:152)
+	at clojure.lang.AFn.applyTo(AFn.java:144)
+	at clojure.core$apply.invokeStatic(core.clj:667)
+	at clojure.core$with_bindings_STAR_.invokeStatic(core.clj:1990)
+	at clojure.core$with_bindings_STAR_.doInvoke(core.clj:1990)
+	at clojure.lang.RestFn.invoke(RestFn.java:425)
+	at clojure.lang.AFn.applyToHelper(AFn.java:156)
+	at clojure.lang.RestFn.applyTo(RestFn.java:132)
+	at clojure.core$apply.invokeStatic(core.clj:671)
+	at clojure.core$bound_fn_STAR_$fn__5818.doInvoke(core.clj:2020)
+	at clojure.lang.RestFn.invoke(RestFn.java:397)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.base/java.lang.Thread.run(Thread.java:1583)

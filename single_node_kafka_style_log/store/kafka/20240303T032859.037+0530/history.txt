@@ -1,0 +1,28 @@
+0	:invoke	:crash	nil
+1	:invoke	:poll	[[:poll]]
+0	:info	:crash	nil
+2	:invoke	:assign	["6"]
+1	:ok	:poll	[[:poll {}]]
+2	:ok	:assign	["6"]
+2	:invoke	:poll	[[:poll]]
+1	:invoke	:poll	[[:poll]]
+2	:ok	:poll	[[:poll {}]]
+1	:ok	:poll	[[:poll {}]]
+2	:invoke	:send	[[:send "9" 1]]
+1	:invoke	:assign	["9"]
+2	:info	:send	[[:send "9" 1]]	:net-timeout
+4	:invoke	:send	[[:send "9" 2]]
+1	:fail	:assign	["9"]	:net-timeout
+1	:invoke	:crash	nil
+1	:info	:crash	nil
+3	:invoke	:poll	[[:poll]]
+4	:info	:send	[[:send "9" 2]]	:net-timeout
+3	:info	:poll	[[:poll]]	:net-timeout
+5	:invoke	:poll	[[:poll]]
+6	:invoke	:poll	[[:poll]]
+6	:info	:poll	[[:poll]]	:net-timeout
+5	:info	:poll	[[:poll]]	:net-timeout
+8	:invoke	:send	[[:send "9" 3]]
+7	:invoke	:assign	["8"]
+8	:info	:send	[[:send "9" 3]]	:net-timeout
+7	:fail	:assign	["8"]	:net-timeout

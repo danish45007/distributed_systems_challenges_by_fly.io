@@ -1,0 +1,26 @@
+2024/03/03 03:29:02 Received {c0 n0 {"type":"init","node_id":"n0","node_ids":["n0"],"msg_id":1}}
+2024/03/03 03:29:02 Node n0 initialized
+2024/03/03 03:29:02 Sent {"src":"n0","dest":"c0","body":{"in_reply_to":1,"type":"init_ok"}}
+2024/03/03 03:29:02 Received {c3 n0 {"offsets":{},"type":"poll","msg_id":1}}
+2024/03/03 03:29:02 Sent {"src":"n0","dest":"c3","body":{"in_reply_to":1,"msgs":{},"type":"poll_ok"}}
+2024/03/03 03:29:02 Received {c4 n0 {"keys":["6"],"type":"list_committed_offsets","msg_id":1}}
+2024/03/03 03:29:02 Sent {"src":"n0","dest":"c4","body":{"in_reply_to":1,"offsets":{"6":0},"type":"list_committed_offsets_ok"}}
+2024/03/03 03:29:02 Received {c4 n0 {"offsets":{"6":0},"type":"poll","msg_id":2}}
+2024/03/03 03:29:02 Sent {"src":"n0","dest":"c4","body":{"in_reply_to":2,"msgs":{},"type":"poll_ok"}}
+2024/03/03 03:29:02 Received {c3 n0 {"offsets":{},"type":"poll","msg_id":2}}
+2024/03/03 03:29:02 Sent {"src":"n0","dest":"c3","body":{"in_reply_to":2,"msgs":{},"type":"poll_ok"}}
+2024/03/03 03:29:02 Received {c4 n0 {"key":"9","msg":1,"type":"send","msg_id":3}}
+2024/03/03 03:29:02 Received {c3 n0 {"keys":["9"],"type":"list_committed_offsets","msg_id":3}}
+panic: interface conversion: interface {} is nil, not float64
+
+goroutine 22 [running]:
+main.(*server).sendHandler(0xc0000680a0, {{0xc0000964b0, 0x2}, {0xc0000964b2, 0x2}, {0xc0000b00c0, 0x2c, 0x30}})
+	/Users/danishsharma/go/src/gossip-glamers/single_node_kafka_style_log/main.go:67 +0x449
+main.LogWrapper.func1({{0xc0000964b0, 0x2}, {0xc0000964b2, 0x2}, {0xc0000b00c0, 0x2c, 0x30}})
+	/Users/danishsharma/go/src/gossip-glamers/single_node_kafka_style_log/main.go:15 +0x63
+github.com/jepsen-io/maelstrom/demo/go.(*Node).handleMessage(0x0?, 0x0?, {{0xc0000964b0, 0x2}, {0xc0000964b2, 0x2}, {0xc0000b00c0, 0x2c, 0x30}})
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:151 +0x96
+github.com/jepsen-io/maelstrom/demo/go.(*Node).Run.func2()
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:129 +0x88
+created by github.com/jepsen-io/maelstrom/demo/go.(*Node).Run
+	/Users/danishsharma/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20231231190402-2674df7c1076/node.go:127 +0x41b
